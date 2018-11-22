@@ -1,0 +1,11 @@
+<% @projects.each do |project| %>
+  <%= link_to project_path(project) do %>
+    <h1><%= project.name %></h1>
+  <% end %>
+<% end %>
+
+<%= link_to new_project_path do%>
+  <i class="fas fa-plus-square"></i>
+<% end %>
+
+<p><%= link_to "Home", root_path %></p>

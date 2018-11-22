@@ -1,0 +1,13 @@
+<h1><%= @project.name %></h1>
+<h1><%= @project.description %></h1>
+<% if @project.photos %>
+  <% @project.photos.each do |photo| %>
+    <img src="<%= cl_image_path photo.url, crop: :fill, width: 50, height: 50 %>" alt="">
+  <% end %>
+<% end %>
+
+
+<p><%= link_to "Edit this project", edit_project_path(@project) %></p>
+<p><%= link_to "Delete this project", project_path(@project), method: :delete %></p>
+<p><%= link_to "Index", projects_path %></p>
+<p><%= link_to "Home", root_path %></p>
