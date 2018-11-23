@@ -1,4 +1,4 @@
-// Run this example by adding <%= javascript_pack_tag 'hd_react' %> anywhere you damn well please
+// Run this test example by adding <%= javascript_pack_tag 'hd_react' %> anywhere you damn well please
 
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -15,14 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
     <div style={{display: 'flex', justifyContent: 'space-around', textAlign: 'center', marginTop: 50}}>
       <div style={{width: '50%'}}>
         <p>Devise Ready</p>
-        <div style={{display: 'flex', justifyContent: 'space-around'}}>
-          <i style={{lineHeight: 2, marginRight: 10}} className="fab fa-font-awesome-flag"></i>
-          <p style={{lineHeight: 2, marginRight: 10}}>Fontawesome Ready</p>
-          <i style={{lineHeight: 2}} className="fab fa-font-awesome-flag"></i>
-        </div>
-        <a href="" className="btn btn-primary">Bootstrap Ready</a>
+        <p>Cloudinary Ready</p>
+        <p>Trix Text Editor Ready</p>
+        <p><i className="fab fa-font-awesome-flag"></i> Fontawesome Ready <i className="fab fa-font-awesome-flag"></i></p>
+        <a target="blank" href="https://img.dietspotlight.com/wp-content/uploads/It-Works-Reviews.jpg" className="btn btn-primary">Bootstrap Ready</a>
         <Hello name="React Ready" />
-        <p>The site will have only one user, the page owner. No sign up. All the project CRUD is hidden behind user_signed_in? logic</p>
+        <p>The site has only one user. No sign up. All the project CRUD is hidden behind user_signed_in? logic</p>
       </div>
     </div>,
     document.body.appendChild(document.createElement('div')),
