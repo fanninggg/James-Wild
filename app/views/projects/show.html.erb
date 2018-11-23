@@ -1,5 +1,5 @@
 <h1><%= @project.name %></h1>
-<h1><%= @project.description %></h1>
+<h1><%= sanitize @project.description %></h1>
 <% if @project.photos %>
   <% @project.photos.each do |photo| %>
     <img src="<%= cl_image_path photo.url, crop: :fill, width: 50, height: 50 %>" alt="">
