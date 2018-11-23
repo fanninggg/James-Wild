@@ -6,8 +6,13 @@
   <% end %>
 <% end %>
 
+<% if user_signed_in? %>
+  <p><%= link_to "Edit this project", edit_project_path(@project) %></p>
+  <p><%= link_to "Delete this project", project_path(@project), method: :delete %></p>
+<% else %>
+  <p>This is where the links for a logged in user live</p>
+<% end %>
 
-<p><%= link_to "Edit this project", edit_project_path(@project) %></p>
-<p><%= link_to "Delete this project", project_path(@project), method: :delete %></p>
+
 <p><%= link_to "Index", projects_path %></p>
 <p><%= link_to "Home", root_path %></p>
