@@ -1,5 +1,41 @@
-<h1>CMS Boilerplate</h1>
-<p>Change me to a landing splash or reroute me to the <%= link_to "Projects", projects_path %> index</p>
+<div class="home-container">
+  <div class="home-video">
+    <div class="player">
+      <%= video_tag "James-Wild-Home.mp4", class: "player__video"%>
+      <button class="player__button toggle" title="Toggle Play">►</button>
+    </div>
+  </div>
+  <div class="home-text">
+    <p class="text-center home-content">James Wild Sculpture’s inception in 2009 came from James’ affinity with the natural world and his powerful desire to want to protect and preserve for future generations.</p>
+    <p class="text-center home-content">Raising awareness, consideration and love for our natural treasures will be the immortal motivation driving his work.</p>
+  </div>
+  <div class="home-latest-work">
+    <h4 class="text-center subheader">LATEST WORK</h4>
+    <p>I will be a carousel</p>
+  </div>
+</div>
 
-<%= javascript_pack_tag 'hd_react' %>
+<script>
+  const player = document.querySelector('.player');
+  const video = player.querySelector('.viewer');
+  const toggle = player.querySelector('.toggle');
 
+  function togglePlay() {
+    if (video.paused) {
+      video.play()
+    } else {
+      video.pause()
+    }
+  }
+
+  function updateButton() {
+    const icon = this.paused ? '►' : '❚❚';
+    console.log(icon);
+    toggle.textContent = icon;
+  }
+
+  video.addEventListener('click', togglePlay);
+  video.addEventListener('play', updateButton);
+  video.addEventListener('pause', updateButton);
+  toggle.addEventListener('click', togglePlay);
+</script>
