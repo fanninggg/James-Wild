@@ -1,11 +1,17 @@
 <div class="navbar-wagon">
-  <p>I am a navbar. Change me or delete me</p>
-  <% if user_signed_in? %>
-    <%= link_to destroy_user_session_path, method: :delete do %>
-        <%= t(".sign_out", default: "SIGN OUT") %>
-    <% end %>
-  <% else %>
-    <%= link_to t(".sign_in", default: "SIGN IN"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-  <% end %>
+  <div class="navbar-left">
+    <div class="jw-logo"></div>
+    <div class="navbar-name">
+      <p class="no-margin">JAMES WILD</p>
+      <p class="no-margin">SCULPTURE</p>
+    </div>
+  </div>
+  <div class="navbar-right">
+    <p class="no-margin">SCRAP</p>
+    <p class="no-margin">BRONZE</p>
+    <p class="no-margin">ABOUT</p>
+    <p class="no-margin">NEWS</p>
+    <p class="no-margin">CONTACT</p>
+  </div>
 </div>
 
