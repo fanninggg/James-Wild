@@ -1,0 +1,25 @@
+.banner {
+  height: calc(100vw / 2.354);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+}
+
+.index-header {
+  text-align: center;
+  font-size: 4vmin;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
+.circle-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2vh 0px;
+}
+
+.circles {
+  max-width: 90vw;
+
+}
