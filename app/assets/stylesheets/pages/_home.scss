@@ -36,10 +36,69 @@
   color: rgba(80,80,80,1);
   font-weight: lighter;
   font-size: 18px;
-  padding-bottom: 5vw;
+  padding-bottom: 5vh;
 }
 
 .subheader {
   color: rgba(100,100,100,1);
   font-weight: bold;
 }
+
+.latest-work-flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.vertical-margin {
+  margin: 5vh 0;
+}
+
+.latest-work-card {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 200px;
+  position: relative;
+  transition: transform .5s;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.latest-work-type {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 0;
+  transition: font-size .5s;
+}
+
+.latest-work-title {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  color: #fff;
+  font-size: 0;
+  transition: font-size .5s;
+}
+
+.linear-gradient-hover {
+  background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0));
+  width: 300px;
+  height: 200px;
+  transition: background-image 5s;
+}
+
+.latest-work-card:hover .latest-work-type {
+  font-size: 16px;
+}
+
+.latest-work-card:hover .latest-work-title {
+  font-size: 16px;
+}
+
+.latest-work-card:hover .linear-gradient-hover {
+  background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,0.2));
+}
+
