@@ -23,7 +23,7 @@ class ProjectsController < ApplicationController
     @project.user = current_user
     @project.name.upcase!
     params[:project][:bronze] == "BRONZE" ? @project.bronze = true : @project.bronze = false
-    if @project.save && @project.photos.first != nil
+    if @project.save && params[:photos]
       params[:photos]['url'].each do |uri|
         @photo = @project.photos.create!(url: uri)
       end
