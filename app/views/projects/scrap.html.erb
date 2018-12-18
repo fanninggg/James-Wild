@@ -4,3 +4,12 @@
 <div class="circle-holder">
   <img class="circles" src="<%= image_path('scrap-circles.png') %>" alt="Study > Collect > Construct > Protect">
 </div>
+<div class="container card-holder">
+  <div class="row">
+    <% @projects.each do |project| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <%= render "shared/card", project: project %>
+      </div>
+    <% end %>
+  </div>
+</div>
