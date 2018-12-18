@@ -2,8 +2,12 @@ class ProjectsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :find_project, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @projects = Project.all
+  def bronze
+    @projects = Project.where(bronze: true)
+  end
+
+  def scrap
+    @projects = Project.where(bronze: false)
   end
 
   def show
@@ -17,6 +21,8 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     @project.user = current_user
+    @project.name.upcase!
+    params[:project][:bronze] == "BRONZE" ? @project.bronze = true : @project.bronze = false
     if @project.save && params[:photos]
       params[:photos]['url'].each do |uri|
         @photo = @project.photos.create!(url: uri)

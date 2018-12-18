@@ -3,6 +3,7 @@
   <%= f.text_field :name, class:"form-control" %>
   <%= f.label :description, 'Project Description', class:"form-control-label" %>
   <%= f.text_field :description, class:"form-control", id: :project_description%>
+  <%= f.select :bronze, ["BRONZE", "SCRAP"] %>
   <trix-editor input="project_description"></trix-editor>
   <%= f.label :photos, 'Project Photos', class:"form-control-label" %>
   <%= f.fields_for :photos do |photo| %>
