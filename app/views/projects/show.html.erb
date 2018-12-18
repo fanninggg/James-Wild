@@ -1,5 +1,24 @@
-<h1><%= @project.name %></h1>
-<h1><%= sanitize @project.description %></h1>
+<div class="show-container">
+  <div class="show-text">
+    <p class="show-title"><%= @project.name %></p>
+    <p><%= sanitize @project.description %></p>
+    <p>Patinated finish</p>
+  </div>
+  <div class="show-images">
+    <div class="main-image text-center">
+      <img src="https://picsum.photos/1000/600" alt="">
+    </div>
+    <div class="other-images">
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 <% if @project.photos %>
   <% @project.photos.each do |photo| %>
     <img src="<%= cl_image_path photo.url, crop: :fill, width: 50, height: 50 %>" alt="">
@@ -7,12 +26,9 @@
 <% end %>
 
 <% if user_signed_in? %>
+  <p>Hey James, the below links are only visible to you</p>
   <p><%= link_to "Edit this project", edit_project_path(@project) %></p>
   <p><%= link_to "Delete this project", project_path(@project), method: :delete %></p>
 <% else %>
   <p>This is where the links for a logged in user live</p>
 <% end %>
-
-
-<p><%= link_to "Index", projects_path %></p>
-<p><%= link_to "Home", root_path %></p>

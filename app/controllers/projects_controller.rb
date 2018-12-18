@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     @project.user = current_user
-    if @project.save && @project.photos.first != nil
+    if @project.save && params[:photos]
       params[:photos]['url'].each do |uri|
         @photo = @project.photos.create!(url: uri)
       end
