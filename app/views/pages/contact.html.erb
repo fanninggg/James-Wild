@@ -1,19 +1,21 @@
 <div class="contact-container">
   <div class="section">
-    <div class="contact-holder text-center">
-      <h4 class="text-center">CONTACT</h4>
-      <div class="contact-flex">
-        <div class="avatar"></div>
-        <p>jamie1wild@gmail.com</p>
-      </div>
-      <div class="contact-flex">
-        <div class="avatar"></div>
-        <p>07921 812332</p>
-      </div>
-      <p class="text-center">Enter your email to recieve a free digital brochure</p>
-      <div class="newsletter-signup">
-        <div class="email-input"></div>
-        <a class="btn btn-primary" href="">SEND</a>
+    <div class="contact-flex-holder text-center">
+      <div class="contact-holder">
+        <h4 class="text-center">CONTACT</h4>
+        <div class="contact-flex">
+          <%= image_tag ("Phone"), class: "contact-avatar" %>
+          <p>jamie1wild@gmail.com</p>
+        </div>
+        <div class="contact-flex">
+          <%= image_tag ("Mail"), class: "contact-avatar" %>
+          <p>07921 812332</p>
+        </div>
+        <p class="text-center">Enter your email to recieve a free digital brochure</p>
+        <div class="newsletter-signup">
+          <input id="email_input" type="text" placeholder="Email..."/>
+          <a class="send-button" href="">SEND</a>
+        </div>
       </div>
     </div>
   </div>
