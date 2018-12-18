@@ -32,15 +32,9 @@
   justify-content: space-around;
 }
 
-.avatar {
-  height: 75px;
-  width: 75px;
-  border-radius: 50%;
-  background-color: grey;
-}
-
 .contact-flex {
   display: flex;
+  align-items: center;
 }
 
 .contact-avatar {
@@ -50,6 +44,14 @@
   border: 1px solid rgba(80,80,80,1);
 }
 
+.bold-large {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.margin-left {
+  margin-left: 20px;
+}
 
 #email_input {
   background-color: transparent;
