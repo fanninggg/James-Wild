@@ -4,26 +4,26 @@
     <p><%= sanitize @project.description %></p>
     <p>Patinated finish</p>
   </div>
-  <div class="show-images">
-    <div class="main-image text-center">
-      <img src="https://picsum.photos/1000/600" alt="">
+  <% if @project.photos %>
+    <div class="show-images">
+      <div class="main-image text-center">
+        <img src="<%= cl_image_path @project.photos.first.url, crop: :fill %>" class="image-splash" alt="Main Project Photo">
+      </div>
+      <div class="other-images">
+        <div class="container">
+          <div class="row">
+            <% @project.photos[1..-1].each do |photo| %>
+              <div class="col-xs-6 col-sm-4 col-md-3">
+                <img src="<%= cl_image_path photo.url, crop: :fill %>" class="additional-images" alt="Main Project Photo">
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div class="other-images">
-
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-<% if @project.photos %>
-  <% @project.photos.each do |photo| %>
-    <img src="<%= cl_image_path photo.url, crop: :fill, width: 50, height: 50 %>" alt="">
   <% end %>
-<% end %>
+</div>
 
 <% if user_signed_in? %>
   <p>Hey James, the below links are only visible to you</p>
