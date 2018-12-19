@@ -35,7 +35,7 @@ class UpdatesController < ApplicationController
   def update
     @update.update(update_params)
     if @update.save!
-      redirect_to :index
+      redirect_to updates_path
     else
       render :edit
     end
