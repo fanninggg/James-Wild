@@ -46,7 +46,6 @@
 <script>
 
   // Image switch on hover
-
   const mainImage = document.getElementById("main-image")
   const smallImages = document.querySelectorAll('.additional-images')
   const mainStartingImage = mainImage.style.backgroundImage
@@ -85,7 +84,7 @@
     }
   })
 
-  // SImilarly, this tests to see if the current image is the first, if it is then the
+  // Similarly, this tests to see if the current image is the first, if it is then the
   // modalImage source is set to the last image in the array, ''.
 
   leftTrigger.addEventListener('click', function() {
@@ -100,4 +99,11 @@
     }
   })
 
+  // Reset the modal to show the first image when the modal is closed
+
+  document.addEventListener("DOMNodeRemoved",function() {
+    modalImage.src = images[0]
+    visibleImage = modalImage.src
+    currentImage = images.indexOf(visibleImage)
+  });
 </script>
