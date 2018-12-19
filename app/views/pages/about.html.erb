@@ -1,8 +1,13 @@
 <div class="about-container">
   <div class="home-video">
-    <div class="player">
-      <%= video_tag "James-Wild-Home.mp4", class: "player__video viewer"%>
-      <button class="player__button toggle" title="Toggle Play">►</button>
+    <div class="player" data-toggle="modal" data-target="#myModal">
+      <%= video_tag "James-Wild-About.mp4", class: "player__video viewer", autoplay: true, muted: true%>
+      <div class="video-logo-holder">
+        <div class="logo-and-play">
+          <%= image_tag "video-logo.png", class:"video-logo" %>
+          <button class="player_button toggle" title="Toggle Play">►</button>
+        </div>
+      </div>
     </div>
   </div>
   <div class="main-text">
@@ -30,9 +35,18 @@
   </div>
 </div>
 
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-video">
+    <div class="modal_player">
+      <%= video_tag "James-Wild-About.mp4", class: "modal_player_video modal_viewer"%>
+      <button class="player_button toggle" title="Toggle Play">►</button>
+    </div>
+  </div>
+</div>
+
 <script>
-  const player = document.querySelector('.player');
-  const video = player.querySelector('.viewer');
+  const player = document.querySelector('.modal_player');
+  const video = player.querySelector('.modal_viewer');
   const toggle = player.querySelector('.toggle');
 
   function togglePlay() {
