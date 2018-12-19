@@ -1,7 +1,7 @@
 <div class="home-container">
   <div class="home-video">
     <div class="player">
-      <%= video_tag "James-Wild-Home.mp4", class: "player__video viewer"%>
+      <%= video_tag "James-Wild-Home.mp4", class: "player__video viewer", autoplay: true, muted: true%>
       <button class="player__button toggle" title="Toggle Play">►</button>
     </div>
   </div>
@@ -16,18 +16,7 @@
         <div class="row">
           <% @projects.each do |project| %>
             <div class="col-xs-12 col-sm-6 col-md-4">
-              <%= link_to project_path(project) do %>
-                <div class="latest-work-card" style="background-image: url('https://picsum.photos/300/200')">
-                  <div class="linear-gradient-hover">
-                    <p class="latest-work-type">
-                      Scrap
-                    </p>
-                    <p class="latest-work-title">
-                      Cobbler's Monkey
-                    </p>
-                  </div>
-                </div>
-              <% end %>
+              <%= render "shared/card", project: project %>
             </div>
           <% end %>
         </div>
