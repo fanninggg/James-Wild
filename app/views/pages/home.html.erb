@@ -1,8 +1,13 @@
 <div class="home-container">
   <div class="home-video">
-    <div class="player">
+    <div class="player" data-toggle="modal" data-target="#myModal">
       <%= video_tag "James-Wild-Home.mp4", class: "player__video viewer", autoplay: true, muted: true%>
-      <button class="player__button toggle" title="Toggle Play">►</button>
+      <div class="video-logo-holder">
+        <div class="logo-and-play">
+          <%= image_tag "video-logo.png", class:"video-logo" %>
+          <button class="player_button toggle" title="Toggle Play">►</button>
+        </div>
+      </div>
     </div>
   </div>
   <div class="main-text">
@@ -16,7 +21,18 @@
         <div class="row">
           <% @projects.each do |project| %>
             <div class="col-xs-12 col-sm-6 col-md-4">
-              <%= render "shared/card", project: project %>
+              <%= link_to project_path(project) do %>
+                <div class="latest-work-card" style="background-image: url(<%= project.photos.empty? ? image_path("bronze_background.png") : cl_image_path(project.photos.first.url.url, quality: "auto:low")%>);">
+                  <div class="linear-gradient-hover">
+                    <p class="latest-work-type">
+                      <%= project.bronze? ? "BRONZE" : "SCRAP" %>
+                    </p>
+                    <p class="latest-work-title">
+                      <%= project.name %>
+                    </p>
+                  </div>
+                </div>
+              <% end %>
             </div>
           <% end %>
         </div>
@@ -25,9 +41,18 @@
   </div>
 </div>
 
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-video">
+    <div class="modal_player">
+      <%= video_tag "James-Wild-Home.mp4", class: "modal_player_video modal_viewer"%>
+      <button class="player_button toggle" title="Toggle Play">►</button>
+    </div>
+  </div>
+</div>
+
 <script>
-  const player = document.querySelector('.player');
-  const video = player.querySelector('.viewer');
+  const player = document.querySelector('.modal_player');
+  const video = player.querySelector('.modal_viewer');
   const toggle = player.querySelector('.toggle');
 
   function togglePlay() {

@@ -4,17 +4,68 @@ body {
 
 .player {
   width: 100vw;
+  height: 85vh;
   box-shadow: 0 0 20px rgba(0,0,0,0.2);
   position: relative;
   font-size: 0;
   overflow: hidden;
+  position: relative;
 }
 
 .player__video {
   width: 100%;
+  position: absolute;
+  top: -11vh;
+  left: 0;
 }
 
-.player__button {
+.video-logo-holder {
+  width: 100vw;
+  height: 85vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-and-play {
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+.video-logo {
+  height: 100px;
+  width: 100px;
+  opacity: 0.3;
+}
+
+.logo-and-play:hover .video-logo {
+  opacity: 0.7;
+}
+
+.logo-and-play:hover .player_button {
+  opacity: 0.7;
+}
+
+.modal_player_video {
+  height: 100vh;
+  width: 100vw;
+}
+
+.modal_video {
+  height: 100vh;
+  width: 100vw;
+}
+
+.player_button {
   background: transparent;
   border: none;
   color: white;
@@ -22,13 +73,11 @@ body {
   outline: 0;
   padding: 0;
   cursor: pointer;
-  font-size: 0px;
-  position: absolute;
-  bottom: 48%;
-  left: 48%;
+  font-size: 50px;
+  opacity: 0.3;
 }
 
-.player:hover .player__button {
+.player:hover .player_button {
   font-size: 50px;
 }
 
