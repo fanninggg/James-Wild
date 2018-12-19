@@ -1,6 +1,6 @@
 .contact-container {
   background-image: asset-url('contact-splash');
-  background-position: center;
+  background-position: bottom;
   background-size: 100vw 110vh;
   height: 80vh;
   width: 100vw;
@@ -12,6 +12,8 @@
 
 .section {
   width: 50vw;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .contact-flex-holder {
@@ -20,7 +22,7 @@
   justify-content: center;
   background-color: rgba(255,255,255,.5);
   height: 60vh;
-  width: 40vw;
+  width: 35vw;
   margin-left: 10vw;
 }
 

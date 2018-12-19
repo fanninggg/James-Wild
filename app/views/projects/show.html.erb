@@ -5,30 +5,99 @@
     <p>Patinated finish</p>
   </div>
   <% if @project.photos %>
-    <div class="show-images">
+    <div class="show-images" data-images='<%= @project.photos.map { |p| p.url.url} %>' id="image-access">
       <div class="main-image text-center">
-        <img src="<%= cl_image_path @project.photos.first.url, crop: :fill %>" class="image-splash" alt="Main Project Photo">
+        <div class="image-splash" id="main-image" alt="Main Project Photo" data-toggle="modal" data-target="#myModal" style="background-image: url(<%= cl_image_path @project.photos.first.url %>)"></div>
       </div>
       <div class="other-images">
         <div class="container">
           <div class="row">
             <% @project.photos[1..-1].each do |photo| %>
-              <div class="col-xs-6 col-sm-4 col-md-3">
-                <img src="<%= cl_image_path photo.url, crop: :fill %>" class="additional-images" alt="Main Project Photo">
+              <div class="col-xs-12 col-sm-6 col-md-3">
+                <img src="<%= cl_image_path photo.url %>" class="additional-images" alt="Main Project Photo">
               </div>
             <% end %>
           </div>
         </div>
-
       </div>
     </div>
   <% end %>
 </div>
 
 <% if user_signed_in? %>
-  <p>Hey James, the below links are only visible to you</p>
-  <p><%= link_to "Edit this project", edit_project_path(@project) %></p>
-  <p><%= link_to "Delete this project", project_path(@project), method: :delete %></p>
+  <div class="hey-james">
+    <p>Hey James, the below links are only visible to you</p>
+    <p><%= link_to "Edit this project", edit_project_path(@project) %></p>
+    <p><%= link_to "Delete this project", project_path(@project), method: :delete %></p>
+  </div>
 <% else %>
   <p>This is where the links for a logged in user live</p>
 <% end %>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-image">
+    <%= cl_image_tag @project.photos.first.url, :id=>"modal-image"%>
+    <div class="carousel-trigger" id="left-trigger"></div>
+    <div class="carousel-trigger" id="right-trigger"></div>
+    <!-- :style=>"height: 90vh; width: 100vw" -->
+  </div>
+</div>
+
+<script>
+
+  // Image switch on hover
+
+  const mainImage = document.getElementById("main-image")
+  const smallImages = document.querySelectorAll('.additional-images')
+  const mainStartingImage = mainImage.style.backgroundImage
+
+  smallImages.forEach(function(image) {
+    image.addEventListener('mouseover', function() {
+      mainImage.style.backgroundImage = mainImage.style.backgroundImage.replace(/http.+\.\w{3,4}/, image.src)
+    });
+    image.addEventListener('mouseout', function() {
+      mainImage.style.backgroundImage = mainStartingImage
+    })
+  });
+
+  // Carousel Code
+
+  const leftTrigger = document.getElementById("left-trigger")
+  const rightTrigger = document.getElementById("right-trigger")
+  const modalImage = document.getElementById("modal-image")
+  let visibleImage = modalImage.src
+  const images = JSON.parse(document.getElementById("image-access").dataset.images)
+  let currentImage = images.indexOf(visibleImage)
+
+  // On click this tests to see if the current image is the last image in the array, if it is
+  // then the carousel sets the modalImage source to the first image in the array, else it
+  // sets it to be the next element in the array
+
+  rightTrigger.addEventListener('click', function() {
+    if (currentImage === images.length-1) {
+      modalImage.src = images[0]
+      visibleImage = modalImage.src
+      currentImage = images.indexOf(visibleImage)
+    } else {
+      modalImage.src = images[currentImage + 1]
+      visibleImage = modalImage.src
+      currentImage = images.indexOf(visibleImage)
+    }
+  })
+
+  // SImilarly, this tests to see if the current image is the first, if it is then the
+  // modalImage source is set to the last image in the array, ''.
+
+  leftTrigger.addEventListener('click', function() {
+    if (currentImage === 0) {
+      modalImage.src = images[images.length-1]
+      visibleImage = modalImage.src
+      currentImage = images.indexOf(visibleImage)
+    } else {
+      modalImage.src = images[currentImage - 1]
+      visibleImage = modalImage.src
+      currentImage = images.indexOf(visibleImage)
+    }
+  })
+
+</script>
