@@ -20,7 +20,7 @@ class UpdatesController < ApplicationController
       redirect_to :root
     else
       @update = Update.new(update_params)
-      @update.title.titleize
+      @update.title = @update.title.titleize
       if @update.save
         redirect_to updates_path
       else
