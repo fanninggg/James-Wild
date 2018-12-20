@@ -52,6 +52,12 @@
     <% else %>
       <div class="inactive-link">
         <%= link_to "CONTACT", new_contact_path, class:"no-margin navbar-link"%>
+
+      </div>
+    <% end %>
+    <% if current_user %>
+      <div class="inactive-link">
+        <%= link_to "Pending", contacts_path, class:"no-margin navbar-link"%>
       </div>
     <% end %>
   </div>
