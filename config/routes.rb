@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'contacts/new'
   devise_for :users
   resources :projects
-  resources :contacts, only: [:index, :new]
+  resources :contacts, only: [:index, :new, :create]
   resources :updates
   root to: 'pages#home'
   get "about", to: "pages#about", as: "about"

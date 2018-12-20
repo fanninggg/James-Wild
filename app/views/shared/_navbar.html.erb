@@ -57,7 +57,7 @@
     <% end %>
     <% if current_user %>
       <div class="inactive-link">
-        <%= link_to "Pending", contacts_path, class:"no-margin navbar-link"%>
+        <%= link_to "MAILING LIST", contacts_path, class:"no-margin navbar-link"%>
       </div>
     <% end %>
   </div>
@@ -85,6 +85,9 @@
           <%= link_to "NEWS", news_path, class:"no-margin navbar-link"%>
         </div>
         <%= link_to "CONTACT", new_contact_path, class:"no-margin navbar-link"%>
+        <% if current_user %>
+          <%= link_to "MAILING", contacts_path, class:"no-margin navbar-link"%>
+        <% end %>
       </div>
     </div>
   </div>
