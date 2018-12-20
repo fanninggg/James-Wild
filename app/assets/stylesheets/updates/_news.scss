@@ -1,0 +1,85 @@
+.news-body {
+  min-height: 80vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 40%;
+  position: relative;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shade {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(216,216,216,0.44);
+
+}
+
+.header-text {
+  color: #505050;
+  text-align: center;
+  margin-top: 6vh;
+  margin-bottom: 6vh;
+  font-size: 4vmin;
+}
+.update-header {
+  color: #505050;
+  font-size: 2vmin;
+  margin: 0 0 5px;
+  max-height: 20%;
+}
+.update-card {
+  background-color: rgba(255,255,255,0.74);
+  border-radius: 2px;
+  width: 70vw;
+  margin-bottom: 2vh;
+  display: flex;
+  height: calc(100vw * 0.14);
+  overflow: hidden;
+}
+.update-description {
+  margin-bottom: 5px;
+  max-height: 70%;
+  overflow: scroll;
+  font-size: 1.7vmin;
+}
+.update-body {
+  padding: 15px 30px 15px 15px;
+  width: 65%;
+  font-size: 1.5vmin;
+  color: #505050;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+.update-image {
+  width: 35%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.update-link {
+  height: 10%;
+  font-size: 1.7vmin;
+}
+
+@media only screen and (max-width: 900px) {
+  .update-card {
+    width: 85%;
+    height: calc(100vw * 0.2);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .update-card {
+    width: 95%;
+    height: calc(100vw * 0.2);
+  }
+}

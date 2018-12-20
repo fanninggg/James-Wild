@@ -1,1 +1,32 @@
-index.html.erb
+<div class="news-body" style="background-image: linear-gradient(180deg, rgba(216,216,216,0.44), rgba(216,216,216,0.44)), url(<%= image_path("giraffe.jpg") %>);">
+
+    <h3 class="header-text">NEWS FROM THE WORKSHOP</h3>
+    <% @updates.each do |update| %>
+      <div class="update-card">
+        <div class="update-body">
+          <div class="update-header"><%= update.title %> - <%= update.created_at.strftime("%d/%m/%Y") %></div>
+          <div class="update-description">
+            <%= update.description %>
+          </div>
+          <% if update.url && update.link %>
+            <a class="update-link" href="<%= update.url %>"><%= update.link %></a>
+          <% end %>
+        </div>
+        <div class="update-image" style="background-image: url(<%= image_path("giraffe.jpg") %>);"></div>
+      </div>
+    <% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
