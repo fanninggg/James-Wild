@@ -47,11 +47,11 @@
     <% end %>
     <% if action_name == "contact" %>
       <div class="active-link">
-        <%= link_to "CONTACT", contact_path, class:"no-margin navbar-link"%>
+        <%= link_to "CONTACT", new_contact_path, class:"no-margin navbar-link"%>
       </div>
     <% else %>
       <div class="inactive-link">
-        <%= link_to "CONTACT", contact_path, class:"no-margin navbar-link"%>
+        <%= link_to "CONTACT", new_contact_path, class:"no-margin navbar-link"%>
       </div>
     <% end %>
   </div>
@@ -78,7 +78,7 @@
           <%= link_to "ABOUT", about_path, class:"no-margin navbar-link"%>
           <%= link_to "NEWS", news_path, class:"no-margin navbar-link"%>
         </div>
-        <%= link_to "CONTACT", contact_path, class:"no-margin navbar-link"%>
+        <%= link_to "CONTACT", new_contact_path, class:"no-margin navbar-link"%>
       </div>
     </div>
   </div>
