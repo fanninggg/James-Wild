@@ -46,6 +46,11 @@
   border: 1px solid rgba(80,80,80,1);
 }
 
+.contact {
+  font-size: 30px;
+  font-weight: lighter;
+}
+
 .bold-large {
   font-size: 22px;
   font-weight: bold;
@@ -68,7 +73,7 @@
 .send-button {
   color: #fff;
   background-color: rgba(80,80,80,1);
-  padding: 8px 20px;
+  padding: 6px 20px 7px 20px;
   margin-left: -5px;
   &:hover {
     color: #fff;
