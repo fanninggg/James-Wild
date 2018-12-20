@@ -1,3 +1,8 @@
+<p>Hey James, this page and the link to it are only available to you</p>
 <% @contacts.each do |contact| %>
-  <%= contact.email %>
+  <p>
+    <%= contact.email %> - <%= contact.sent ? "Email Sent" : "Not Yet Emailed" %>
+    <a href="" class="btn btn-lg btn-primary">Email Sent?</a>
+    < Please connect me up
+  </p>
 <% end %>

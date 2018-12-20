@@ -13,7 +13,10 @@
         </div>
         <p class="text-center bold-large">Enter your email to recieve a free digital brochure</p>
         <div class="newsletter-signup">
-
+          <%= simple_form_for (@contact) do |f| %>
+            <%= f.input :email %>
+            <%= f.submit "SEND", class: "btn btn-primary" %>
+          <% end %>
         </div>
       </div>
     </div>
