@@ -47,12 +47,12 @@
 }
 
 .contact {
-  font-size: 30px;
+  font-size: 3.5vmin;
   font-weight: lighter;
 }
 
 .bold-large {
-  font-size: 22px;
+  font-size: 2.5vmin;
   font-weight: bold;
 }
 
@@ -79,5 +79,49 @@
     color: #fff;
     text-decoration: none;
     background-color: rgba(60,60,60,1);
+  }
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .contact-container {
+    height: 80vh;
+    width: 100vw;
+    color: rgba(80,80,80,1);
+    display: block;
+  }
+  .section {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .contact-flex-holder {
+    height: 70vh;
+    width: 80vw;
+    margin: 5vw 0;
+  }
+  .contact-holder {
+    height: 50vh;
+    width: 60vw;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .contact-avatar {
+    height: 50px;
+    width: 50px;
+  }
+
+  .bold-large {
+    font-size: 3.5vmin;
+  }
+
+  .send-button-holder {
+    margin-top: 5px;
+  }
+
+  .send-button {
+    margin: 0;
   }
 }

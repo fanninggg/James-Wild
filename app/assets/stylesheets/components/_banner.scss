@@ -7,17 +7,18 @@
 
 .index-header {
   text-align: center;
-  font-size: 4vmin;
+  font-size: 3.5vmin;
   margin-top: 3vh;
   margin-bottom: 3vh;
-  color: #505050;
+  color: rgba(100,100,100,1);
+  font-weight: bold;
 }
 
 .circle-holder {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2vh 0px;
+  padding: 2vh 0;
 }
 
 .circles {
