@@ -45,14 +45,13 @@
         <%= link_to "NEWS", news_path, class:"no-margin navbar-link"%>
       </div>
     <% end %>
-    <% if action_name == "contact" %>
+    <% if action_name == "new" %>
       <div class="active-link">
         <%= link_to "CONTACT", new_contact_path, class:"no-margin navbar-link"%>
       </div>
     <% else %>
       <div class="inactive-link">
         <%= link_to "CONTACT", new_contact_path, class:"no-margin navbar-link"%>
-
       </div>
     <% end %>
     <% if current_user %>
