@@ -14,7 +14,7 @@
           <div class="row">
             <% @project.photos[1..-1].each do |photo| %>
               <div class="col-xs-12 col-sm-6 col-md-3">
-                <img src="<%= cl_image_path photo.url %>" class="additional-images" alt="Main Project Photo">
+                <img src="<%= cl_image_path photo.url %>" class="additional-images" alt="Main Project Photo" data-toggle="modal" data-target="#myModal">
               </div>
             <% end %>
           </div>
@@ -41,24 +41,9 @@
 </div>
 
 <script>
-
-  // Image switch on hover
-
   const mainImage = document.getElementById("main-image")
   const smallImages = document.querySelectorAll('.additional-images')
   const mainStartingImage = mainImage.style.backgroundImage
-
-  smallImages.forEach(function(image) {
-    image.addEventListener('mouseover', function() {
-      mainImage.style.backgroundImage = mainImage.style.backgroundImage.replace(/http.+\.\w{3,4}/, image.src)
-    });
-    image.addEventListener('mouseout', function() {
-      mainImage.style.backgroundImage = mainStartingImage
-    })
-  });
-
-  // Carousel Code
-
   const leftTrigger = document.getElementById("left-trigger")
   const rightTrigger = document.getElementById("right-trigger")
   const modalImage = document.getElementById("modal-image")
@@ -66,9 +51,21 @@
   const images = JSON.parse(document.getElementById("image-access").dataset.images)
   let currentImage = images.indexOf(visibleImage)
 
-  // On click this tests to see if the current image is the last image in the array, if it is
-  // then the carousel sets the modalImage source to the first image in the array, else it
-  // sets it to be the next element in the array
+    smallImages.forEach(function(image) {
+    image.addEventListener('mouseover', function() {
+      mainImage.style.backgroundImage = mainImage.style.backgroundImage.replace(/http.+\.\w{3,4}/, image.src)
+    });
+    image.addEventListener('mouseout', function() {
+      mainImage.style.backgroundImage = mainStartingImage
+    })
+    image.addEventListener('click', function() {
+      console.log(modalImage.src)
+      modalImage.src = image.src
+      console.log(modalImage.src)
+    })
+  });
+
+  // On click this tests to see if the current image is the last image in the array, if it is then the carousel sets the modalImage source to the first image in the array, else it sets it to be the next element in the array
 
   rightTrigger.addEventListener('click', function() {
     if (currentImage === images.length-1) {
@@ -82,8 +79,7 @@
     }
   })
 
-  // Similarly, this tests to see if the current image is the first, if it is then the
-  // modalImage source is set to the last image in the array, ''.
+  // Similarly, this tests to see if the current image is the first, if it is then the modalImage source is set to the last image in the array, ''.
 
   leftTrigger.addEventListener('click', function() {
     if (currentImage === 0) {
@@ -99,9 +95,10 @@
 
   // Reset the modal to show the first image when the modal is closed
 
-  document.addEventListener("DOMNodeRemoved",function() {
-    modalImage.src = images[0]
-    visibleImage = modalImage.src
-    currentImage = images.indexOf(visibleImage)
-  });
+  // document.addEventListener("DOMNodeRemoved",function() {
+  //   console.log("I am a bastard function")
+  //   modalImage.src = images[0]
+  //   visibleImage = modalImage.src
+  //   currentImage = images.indexOf(visibleImage)
+  // });
 </script>

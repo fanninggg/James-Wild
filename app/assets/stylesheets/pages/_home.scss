@@ -3,6 +3,13 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+a {
+  color: rgba(80,80,80,1);
+  &:hover {
+    color: rgba(80,80,80,1);
+  }
+}
+
 .player {
   width: 100vw;
   height: calc(100vw / 2.4);
