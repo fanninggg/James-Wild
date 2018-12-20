@@ -1,7 +1,7 @@
 <div class="show-container">
   <div class="show-text">
     <p class="show-title"><%= @project.name %></p>
-    <p><%= sanitize @project.description %></p>
+    <p class="no-margin"><%= sanitize @project.description %></p>
     <p>Patinated finish</p>
   </div>
   <% if @project.photos %>
@@ -30,16 +30,13 @@
     <p><%= link_to "Edit this project", edit_project_path(@project) %></p>
     <p><%= link_to "Delete this project", project_path(@project), method: :delete %></p>
   </div>
-<% else %>
-  <p>This is where the links for a logged in user live</p>
 <% end %>
 
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-image">
+    <%= image_tag "left-arrow.png", id:"left-trigger" %>
     <%= cl_image_tag @project.photos.first.url, :id=>"modal-image"%>
-    <div class="carousel-trigger" id="left-trigger"></div>
-    <div class="carousel-trigger" id="right-trigger"></div>
-    <!-- :style=>"height: 90vh; width: 100vw" -->
+    <%= image_tag "right-arrow.png", id:"right-trigger" %>
   </div>
 </div>
 
