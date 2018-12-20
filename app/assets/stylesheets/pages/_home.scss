@@ -161,6 +161,10 @@ a {
   background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,0.2));
 }
 
+.main-body {
+  min-height: 82vh;
+}
+
 @media only screen and (max-width: 800px) {
 
   .logo-and-play {
@@ -172,6 +176,9 @@ a {
   }
   .player_button {
     font-size: 25pxr;
+  }
+  .main-body {
+    min-height: 84vh;
   }
 }
 
