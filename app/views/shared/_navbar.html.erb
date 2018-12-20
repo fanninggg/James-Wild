@@ -9,11 +9,85 @@
     </div>
   </div>
   <div class="navbar-right">
-    <%= link_to "SCRAP", scrap_path, class:"navbar-link"%>
-    <%= link_to "BRONZE", bronze_path, class:"navbar-link"%>
-    <%= link_to "ABOUT", about_path, class:"navbar-link"%>
-    <%= link_to "NEWS", news_path, class:"navbar-link"%>
-    <%= link_to "CONTACT", contact_path, class:"navbar-link"%>
+    <% if action_name == "scrap" %>
+      <div class="active-link">
+        <%= link_to "SCRAP", scrap_path, class:"no-margin navbar-link"%>
+      </div>
+    <% else %>
+      <div class="inactive-link">
+        <%= link_to "SCRAP", scrap_path, class:"no-margin navbar-link"%>
+      </div>
+    <% end %>
+    <% if action_name == "bronze" %>
+      <div class="active-link">
+        <%= link_to "BRONZE", bronze_path, class:"no-margin navbar-link"%>
+      </div>
+    <% else %>
+      <div class="inactive-link">
+        <%= link_to "BRONZE", bronze_path, class:"no-margin navbar-link"%>
+      </div>
+    <% end %>
+    <% if action_name == 'about' %>
+      <div class="active-link">
+        <%= link_to "ABOUT", about_path, class:"no-margin navbar-link"%>
+      </div>
+    <% else %>
+      <div class="inactive-link">
+        <%= link_to "ABOUT", about_path, class:"no-margin navbar-link"%>
+      </div>
+    <% end %>
+    <% if controller_name == "updates" && action_name == 'index' %>
+      <div class="active-link">
+        <%= link_to "NEWS", news_path, class:"no-margin navbar-link"%>
+      </div>
+    <% else %>
+      <div class="inactive-link">
+        <%= link_to "NEWS", news_path, class:"no-margin navbar-link"%>
+      </div>
+    <% end %>
+    <% if action_name == "contact" %>
+      <div class="active-link">
+        <%= link_to "CONTACT", contact_path, class:"no-margin navbar-link"%>
+      </div>
+    <% else %>
+      <div class="inactive-link">
+        <%= link_to "CONTACT", contact_path, class:"no-margin navbar-link"%>
+      </div>
+    <% end %>
   </div>
 </div>
 
+
+<div class="mobile-nav">
+  <div class="mobile-navbar-left">
+    <%= link_to "/" do %>
+      <%= image_tag "Logo.jpg", class:"mobile-jw-logo" %>
+    <% end %>
+    <div class="navbar-name">
+      <p class="no-margin mobile-logo-text">JAMES WILD SCULPTURE</p>
+    </div>
+  </div>
+  <div class="mobile-navbar-right">
+    <div class="dropdown">
+      <img style="height: 30px; width: 30px; margin-right: 10px;" src="<%= image_path('menu.png') %>" alt="Hamburger" id="dropdownMenuButton">
+      <div class="drop-menu" id="drop-menu">
+        <%= link_to "SCRAP", scrap_path, class:"no-margin navbar-link"%>
+        <%= link_to "BRONZE", bronze_path, class:"no-margin navbar-link"%>
+        <div style="flex-direction: column; display: flex;">
+          <%= link_to "ABOUT", about_path, class:"no-margin navbar-link"%>
+          <%= link_to "NEWS", news_path, class:"no-margin navbar-link"%>
+        </div>
+        <%= link_to "CONTACT", contact_path, class:"no-margin navbar-link"%>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  var menu = document.getElementById('drop-menu')
+  document.getElementById('dropdownMenuButton').addEventListener("click", () => {
+    menu.classList.toggle("show");
+    console.log('clicked')
+  })
+</script>
