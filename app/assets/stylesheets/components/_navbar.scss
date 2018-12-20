@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-between;
   font-family: 'Antic', sans-serif;
+  min-height: 80px;
 }
 
 .navbar-left {
@@ -20,40 +21,123 @@
   width: 50vw;
   align-items: flex-end;
 }
-
+.inactive-link {
+  height: 40px;
+}
+.active-link {
+  height: 40px;
+  border-bottom: 4px solid #505050;
+}
 .no-margin {
   margin: 0;
 }
 
 .jw-logo {
-  height: 50px;
-  width: 50px;
+  height: 7vh;
+  width: 7vh;
+  min-height:70px;
+  min-width: 70px;
   border-radius: 50%;
-  background-color: grey;
+}
+
+.mobile-jw-logo {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
 }
 
 .navbar-link {
-  color: rgba(80,80,80,1);
-  font-size: 2vmin;
+  color: #505050;
+  font-size: 19px;
   &:hover {
     text-decoration: none;
-    color: rgba(120,120,120,1);
+    color: black;
+    font-weight: bold;
   }
 }
 
 .logo-text {
-  font-size: 2.5vmin;
-  margin-left: 2vmin;
+  font-size: 24px;
+  margin-left: 10px;
+  line-height: 1;
+}
+
+.mobile-logo-text {
+  font-size: 19px;
+  margin-left: 10px;
   line-height: 1;
 }
 
 .offset {
-  margin-left: 4vmin;
+  margin-left: 30px;
+}
+
+.mobile-navbar-left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  float: left !important;
+  height: 100%;
+}
+
+.mobile-navbar-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  float: right !important;
+  height: 100%;
+}
+
+.mobile-nav {
+  display: none !important;
+  background: white;
+  transition: all 0.3s ease;
+  height: 60px;
+  // padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Antic', sans-serif;
+}
+
+.drop-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+  display: none;
+  min-width: 100px;
+  // display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 5px 20px;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 18px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+}
+
+.show {
+  display: block !important;
+}
+
+@media only screen and (max-width: 400px) {
+  .mobile-logo-text {
+    max-width: 150px;
+  }
 }
 
 @media only screen and (max-width: 800px) {
-  .jw-logo {
-    height: 30px;
-    width: 30px;
+  .navbar-JW {
+    display: none;
+  }
+  .mobile-nav {
+    display: block !important;
   }
 }
