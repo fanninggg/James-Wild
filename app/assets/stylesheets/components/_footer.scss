@@ -8,10 +8,19 @@
   height: 10vh;
   font-family: 'Antic', sans-serif;
   font-size: 2vmin;
+  a:hover {
+    color: rgba(120,120,120,1);
+    text-decoration: none;
+    cursor: pointer;
+  }
 }
 
 .footer-insta {
   font-size: 4vmin;
+  &:hover {
+    color: rgba(120,120,120,1);
+    cursor: pointer;
+  }
 }
 
 .margin-top {
