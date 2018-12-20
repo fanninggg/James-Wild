@@ -5,8 +5,7 @@ body {
 
 .player {
   width: 100vw;
-  height: 85vh;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  height: calc(100vw / 2.4);
   position: relative;
   font-size: 0;
   overflow: hidden;
@@ -22,7 +21,7 @@ body {
 
 .video-logo-holder {
   width: 100vw;
-  height: 85vh;
+  height: calc(100vw / 2.4);
   position: absolute;
   top: 0;
   left: 0;
@@ -153,5 +152,33 @@ body {
 
 .latest-work-card:hover .linear-gradient-hover {
   background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,0.2));
+}
+
+@media only screen and (max-width: 800px) {
+
+  .logo-and-play {
+    height: 10vh;
+  }
+  .video-logo {
+    height: 50px;
+    width: 50px;
+  }
+  .player_button {
+    font-size: 25pxr;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .logo-and-play {
+    height: 5vh;
+  }
+  .video-logo {
+    height: 25px;
+    width: 25px;
+  }
+  .player_button {
+    font-size: 15px;
+  }
 }
 
