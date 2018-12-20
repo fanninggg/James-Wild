@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :scrap, :bronze]
   before_action :find_project, only: [:show, :edit, :update, :destroy]
 
   def bronze
