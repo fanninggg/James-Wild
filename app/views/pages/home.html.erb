@@ -1,6 +1,6 @@
 <div class="home-container">
   <div class="home-video">
-    <div class="player" data-toggle="modal" data-target="#myModal">
+    <div class="player" data-toggle="modal" data-target="#homeModal">
       <%= video_tag "James-Wild-Home.mp4", class: "player__video viewer", autoplay: true, muted: true%>
       <div class="video-logo-holder">
         <div class="logo-and-play">
@@ -41,7 +41,7 @@
   </div>
 </div>
 
-<div id="myModal" class="modal fade" role="dialog">
+<div id="homeModal" class="modal fade" role="dialog">
   <div class="modal-video">
     <div class="modal_player">
       <%= video_tag "James-Wild-Home.mp4", class: "modal_player_video modal_viewer"%>
