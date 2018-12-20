@@ -11,6 +11,7 @@
     letter-spacing: 3px;
     font-size: 2vmin;
     color: #505050;
+    font-family: "antic";
   }
   a {
     text-decoration: none;
@@ -29,4 +30,12 @@
   z-index: 2;
   background: black;
   opacity: 0;
+}
+
+@media only screen and (max-width: 800px) {
+  .card {
+    p {
+      font-size: 16px;
+    }
+  }
 }
