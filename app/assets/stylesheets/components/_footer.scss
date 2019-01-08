@@ -15,6 +15,12 @@
   }
 }
 
+.insta-link {
+  &:focus {
+    color: #505050;
+  }
+}
+
 .footer-right {
   width: 40%;
   text-align: right;
