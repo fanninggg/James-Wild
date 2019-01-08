@@ -1,6 +1,6 @@
 class UpdatesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :find_project, only: [:show, :edit, :update, :destroy]
+  before_action :find_update, only: [:show, :edit, :update, :destroy]
 
   def index
     @updates = Update.last(10)
@@ -11,8 +11,12 @@ class UpdatesController < ApplicationController
   end
 
   def destroy
-    @update.destroy
-    redirect_to :index
+    if !current_user
+      redirect_to :root
+    else
+      @update.destroy
+      redirect_to updates_path
+    end
   end
 
   def create

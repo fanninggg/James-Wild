@@ -3,23 +3,27 @@
     <div class="contact-flex-holder ">
       <div class="contact-holder">
         <h4 class="text-center contact">CONTACT</h4>
+        <p class="text-center">Please get in contact by</p>
         <div class="contact-flex">
-          <%= image_tag ("Phone"), class: "contact-avatar" %>
+          <%= image_tag ("Mail"), class: "contact-avatar" %>
           <p class="bold-large margin-left">jamie1wild@gmail.com</p>
         </div>
         <div class="contact-flex">
-          <%= image_tag ("Mail"), class: "contact-avatar" %>
+          <%= image_tag ("Phone"), class: "contact-avatar" %>
           <p class="bold-large margin-left">07921 812332</p>
         </div>
-        <p class="text-center bold-large">Enter your email to recieve a free digital brochure</p>
+        <p class="text-center bold-large">To be sent a James Wild sculpture brochure, please enter your email here</p>
         <div class="newsletter-signup">
-          <%= simple_form_for (@contact) do |f| %>
-            <%= f.input :email, label: false %>
-            <%= f.submit "SEND", class: "btn btn-primary" %>
-          <% end %>
+          <div class="form-center">
+            <%= simple_form_for (@contact), html: {class: 'form-inline contact-form'} do |f| %>
+                <%= f.input :email, label: false, placeholder: "Email", class: "form-control" %>
+                <%= f.submit "SEND", class: "btn send-button" %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div class="section"></div>
 </div>
+

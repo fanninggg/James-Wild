@@ -71,11 +71,42 @@
   }
 }
 
+#contact_email {
+  background: transparent;
+  border: 1px solid #505050;
+  color: #505050;
+  height: 100%;
+}
+
+#contact_email::placeholder {
+  color: #505050;
+  opacity: 1;
+  font-style: italic;
+}
+
+.contact_email {
+  flex-grow: 1;
+  .optional {
+    width: 100%;
+  }
+}
+
+.contact-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-email-input {
+  // flex-grow: 1;
+}
+
 .send-button {
   color: #fff;
   background-color: rgba(80,80,80,1);
   padding: 6px 20px 7px 20px;
   margin-left: -5px;
+  font-weight: bold;
   &:hover {
     color: #fff;
     text-decoration: none;
@@ -84,12 +115,13 @@
 }
 
 .newsletter-signup {
-  width: 100%;
   display: flex;
-  align-items: center;
-  padding-left: 25%;
+  justify-content: center;
 }
 
+.form-center {
+  width: 80%;
+}
 
 @media only screen and (max-width: 1200px) {
   .contact-container {

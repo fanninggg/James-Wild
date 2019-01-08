@@ -3,5 +3,19 @@
     <div class="card-image" style="background-image: url(<%= project.photos.empty? ? image_path("bronze_background.png") : cl_image_path(project.photos.first.url.url, quality: "auto:low")%>);">
     </div>
     <p><%= project.name %></p>
+    <% if current_user %>
+      <div class="edit-delete-links">
+        <%= link_to edit_project_path(project) do %>
+          <div class="edit links-circle">
+            <%= image_tag 'weld.png', class: "links-icons" %>
+          </div>
+        <% end %>
+        <%= link_to project_path(project), method: "delete" do %>
+          <div class="delete links-circle">
+            <%= image_tag 'bin.png', class: "links-icons" %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
 </div>
