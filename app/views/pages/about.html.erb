@@ -1,14 +1,14 @@
 <div class="about-container">
   <div class="home-video">
     <div class="player" >
-      <%= video_tag "James-Wild-About.mp4", class: "player__video viewer", autoplay: true, muted: true%>
+      <%= video_tag "James-Wild-About.mp4", class: "player__video viewer", id: "video_home", autoplay: true, muted: true%>
       <div class="video-logo-holder">
         <div class="logo-and-play">
           <%= image_tag "video-logo.png", class:"video-logo" %>
         </div>
         <div class="volume-toggle">
-          <%= image_tag "volume_on.png", class:"volume-logo hidden" %>
-          <%= image_tag "volume_off.png", class:"volume-logo" %>
+          <%= image_tag "volume_on.png", class:"volume-logo hidden", id: "volume_on" %>
+          <%= image_tag "volume_off.png", class:"volume-logo", id: "volume_off" %>
         </div>
       </div>
     </div>
@@ -39,3 +39,23 @@
     <a href="https://vimeo.com/124198236" class="link-text">For more videos about James Wild Sculpture...</a>
   </div>
 </div>
+
+<script>
+  const video = document.getElementById("video_home");
+  const volumeOn = document.getElementById("volume_on");
+  const volumeOff = document.getElementById("volume_off");
+
+  volumeOff.addEventListener('click', function() {
+    volumeOn.classList.toggle("hidden");
+    volumeOff.classList.toggle("hidden");
+    video.muted = false;
+    console.log(video.muted)
+  });
+
+  volumeOn.addEventListener('click', function() {
+    volumeOn.classList.toggle("hidden");
+    volumeOff.classList.toggle("hidden");
+    video.muted = true;
+    console.log(video.muted)
+  });
+</script>
