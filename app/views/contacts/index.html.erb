@@ -1,11 +1,11 @@
 <h3 style="margin-bottom: 50px;margin-left: 40px;">Hey James, this page and the link to it are only available to you</h3>
 <div class="container">
-  <% @contacts.each do |contact| %>
+  <% @contacts.reverse.each do |contact| %>
     <% if !contact.sent %>
       <div class="email-cont">
         <%= mail_to contact.email do %>
           <p style="color:red;margin:0;margin-right: 20px;">
-            <%= contact.email %> - <%= contact.sent ? "Email Sent" : "Not Yet Emailed" %>
+            <%= contact.email %> - Not Yet Emailed
           </p>
         <% end %>
         <%= link_to(sent_contact_path(contact)) do %>
@@ -15,7 +15,7 @@
     <% else %>
       <div class="email-cont">
         <p style="color:green;margin:0;margin-right: 20px;">
-          <%= contact.email %> - <%= contact.sent ? "Email Sent" : "Not Yet Emailed" %>
+          <%= contact.email %> - Email Sent
         </p>
       </div>
     <% end %>

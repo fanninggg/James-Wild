@@ -137,9 +137,7 @@ a {
   position: relative;
   transition: transform .5s;
   margin-bottom: 20px;
-  &:hover {
-    transform: scale(1.1);
-  }
+
 }
 
 .latest-work-type {
@@ -181,6 +179,14 @@ a {
 
 .main-body {
   min-height: 82vh;
+}
+
+@media only screen and (min-width: 800px) {
+  .latest-work-card {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }
 
 @media only screen and (max-width: 800px) {
