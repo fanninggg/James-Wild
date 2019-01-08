@@ -130,6 +130,14 @@
   width: 80%;
 }
 
+.email-cont {
+  flex-direction: row;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
 @media only screen and (max-width: 1200px) {
   .contact-container {
     min-height: 82vh;
@@ -171,7 +179,7 @@
     margin-top: 5px;
   }
 
-  .send-button {
-    margin: 0;
-  }
+  // .send-button {
+  //   margin: 0;
+  // }
 }

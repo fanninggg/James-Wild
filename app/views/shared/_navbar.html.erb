@@ -1,3 +1,4 @@
+<% unanswered = Contact.where(sent: false) %>
 <div class="navbar-JW">
   <div class="navbar-left">
     <%= link_to "/" do %>
@@ -55,8 +56,11 @@
       </div>
     <% end %>
     <% if current_user %>
-      <div class="inactive-link">
+      <div class="inactive-link mailing-list-link">
         <%= link_to "MAILING LIST", contacts_path, class:"no-margin navbar-link"%>
+        <% if unanswered.length > 0 %>
+          <div class="mailing-list-counter"><%= unanswered.length %></div>
+        <% end %>
       </div>
     <% end %>
   </div>

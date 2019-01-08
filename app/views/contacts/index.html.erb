@@ -1,8 +1,23 @@
-<p>Hey James, this page and the link to it are only available to you</p>
-<% @contacts.each do |contact| %>
-  <p>
-    <%= contact.email %> - <%= contact.sent ? "Email Sent" : "Not Yet Emailed" %>
-    <a href="" class="btn btn-lg btn-primary">Email Sent?</a>
-    < Please connect me up
-  </p>
-<% end %>
+<h3 style="margin-bottom: 50px;margin-left: 40px;">Hey James, this page and the link to it are only available to you</h3>
+<div class="container">
+  <% @contacts.each do |contact| %>
+    <% if !contact.sent %>
+      <div class="email-cont">
+        <%= mail_to contact.email do %>
+          <p style="color:red;margin:0;margin-right: 20px;">
+            <%= contact.email %> - <%= contact.sent ? "Email Sent" : "Not Yet Emailed" %>
+          </p>
+        <% end %>
+        <%= link_to(sent_contact_path(contact)) do %>
+          <div class="btn btn-primary">Sent</div>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="email-cont">
+        <p style="color:green;margin:0;margin-right: 20px;">
+          <%= contact.email %> - <%= contact.sent ? "Email Sent" : "Not Yet Emailed" %>
+        </p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
