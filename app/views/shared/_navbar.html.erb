@@ -8,6 +8,11 @@
       <p class="no-margin logo-text">JAMES WILD</p>
       <p class="no-margin logo-text offset">SCULPTURE</p>
     </div>
+    <% if user_signed_in? %>
+      <%= link_to destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link-dark" do %>
+        <i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
+      <% end %>
+    <% end %>
   </div>
   <div class="navbar-right">
     <% if action_name == "scrap" %>
