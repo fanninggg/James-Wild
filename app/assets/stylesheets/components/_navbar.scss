@@ -9,6 +9,24 @@
   min-height: 80px;
 }
 
+.mailing-list-link {
+  position: relative;
+}
+
+.mailing-list-counter {
+  position: absolute;
+  top: -15px;
+  right: -20px;
+  background-color: red;
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
 .navbar-left {
   display: flex;
   justify-content: space-between;
@@ -141,7 +159,7 @@
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
   .navbar-JW {
     display: none;
   }

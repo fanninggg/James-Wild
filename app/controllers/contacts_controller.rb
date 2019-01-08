@@ -16,9 +16,19 @@ class ContactsController < ApplicationController
     redirect_to new_contact_path
   end
 
+  def sent
+    @contact = Contact.find(params[:id])
+    @contact.sent = true
+    if @contact.save
+      redirect_to contacts_path
+    else
+      flash[:error] = 'Something went wrong'
+    end
+  end
+
   private
 
   def contact_params
-    params.require(:contact).permit(:email)
+    params.require(:contact).permit(:email, :id)
   end
 end
