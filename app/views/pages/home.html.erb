@@ -7,8 +7,8 @@
           <%= image_tag "video-logo.png", class:"video-logo" %>
         </div>
         <div class="volume-toggle">
-          <%= image_tag "volume_on.png", class:"volume-logo hidden" %>
-          <%= image_tag "volume_off.png", class:"volume-logo" %>
+          <%= image_tag "volume_on.png", class:"volume-logo hidden", id: "volume_on" %>
+          <%= image_tag "volume_off.png", class:"volume-logo", id: "volume_off" %>
         </div>
       </div>
     </div>
@@ -44,4 +44,22 @@
   </div>
 </div>
 
+<script>
+  const video = document.getElementById("video_home");
+  const volumeOn = document.getElementById("volume_on");
+  const volumeOff = document.getElementById("volume_off");
 
+  volumeOff.addEventListener('click', function() {
+    volumeOn.classList.toggle("hidden");
+    volumeOff.classList.toggle("hidden");
+    video.muted = false;
+    console.log(video.muted)
+  });
+
+  volumeOn.addEventListener('click', function() {
+    volumeOn.classList.toggle("hidden");
+    volumeOff.classList.toggle("hidden");
+    video.muted = true;
+    console.log(video.muted)
+  });
+</script>
