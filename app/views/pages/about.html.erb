@@ -1,10 +1,14 @@
 <div class="about-container">
   <div class="home-video">
     <div class="player" >
-      <%= video_tag "James-Wild-About.mp4", class: "player__video viewer", autoplay: true, muted: true%>
+      <%= video_tag "James-Wild-About.mp4", class: "player__video viewer", autoplay: true, muted: false%>
       <div class="video-logo-holder">
         <div class="logo-and-play">
           <%= image_tag "video-logo.png", class:"video-logo" %>
+        </div>
+        <div class="volume-toggle">
+          <%= image_tag "volume_on.png", class:"volume-logo hidden" %>
+          <%= image_tag "volume_off.png", class:"volume-logo" %>
         </div>
       </div>
     </div>
