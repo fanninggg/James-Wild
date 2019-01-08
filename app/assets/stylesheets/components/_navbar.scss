@@ -54,6 +54,11 @@
     color: black;
     font-weight: bold;
   }
+  &:focus {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
 }
 
 .logo-text {
