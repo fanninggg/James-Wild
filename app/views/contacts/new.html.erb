@@ -14,10 +14,12 @@
         </div>
         <p class="text-center bold-large">To be sent a James Wild sculpture brochure, please enter your email here</p>
         <div class="newsletter-signup">
-          <%= simple_form_for (@contact), html: {class: 'form-inline contact-form'} do |f| %>
-              <%= f.input :email, label: false, class: "form-control" %>
-              <%= f.submit "SEND", class: "btn send-email-button" %>
-          <% end %>
+          <div class="form-center">
+            <%= simple_form_for (@contact), html: {class: 'form-inline contact-form'} do |f| %>
+                <%= f.input :email, label: false, placeholder: "Email", class: "form-control" %>
+                <%= f.submit "SEND", class: "btn send-button" %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
