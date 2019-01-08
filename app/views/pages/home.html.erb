@@ -1,11 +1,10 @@
 <div class="home-container">
   <div class="home-video">
     <div class="player">
-      <%= video_tag "James-Wild-Home.mp4", class: "player__video viewer", autoplay: true, muted: true%>
+      <%= video_tag "James-Wild-Home.mp4", class: "player__video viewer", id: "video_home", autoplay: true, muted: true%>
       <div class="video-logo-holder">
         <div class="logo-and-play">
           <%= image_tag "video-logo.png", class:"video-logo" %>
-          <button class="player_button toggle" title="Toggle Play">►</button>
         </div>
       </div>
     </div>
@@ -40,3 +39,5 @@
     </div>
   </div>
 </div>
+
+
