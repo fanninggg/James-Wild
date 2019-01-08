@@ -71,11 +71,43 @@
   }
 }
 
-.send-button {
-  color: #fff;
-  background-color: rgba(80,80,80,1);
-  padding: 6px 20px 7px 20px;
-  margin-left: -5px;
+.contact_email {
+  flex-grow: 1;
+  .optional {
+    width: 100%;
+  }
+}
+
+.contact-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-email-input {
+  // flex-grow: 1;
+}
+
+// .send-button {
+//   color: #fff;
+//   background-color: rgba(80,80,80,1);
+//   padding: 6px 20px 7px 20px;
+//   margin-left: -5px;
+//   &:hover {
+//     color: #fff;
+//     text-decoration: none;
+//     background-color: rgba(60,60,60,1);
+//   }
+// }
+
+.send-email-button {
+  color: #505050;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 2px;
+  padding: 6px 20px 6px 20px;
+  margin: 0 10px;
+  height: 39px;
   &:hover {
     color: #fff;
     text-decoration: none;
@@ -84,12 +116,9 @@
 }
 
 .newsletter-signup {
-  width: 100%;
   display: flex;
-  align-items: center;
-  padding-left: 25%;
+  justify-content: center;
 }
-
 
 @media only screen and (max-width: 1200px) {
   .contact-container {

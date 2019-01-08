@@ -22,15 +22,27 @@
       </div>
     </div>
   <% end %>
+  <% if user_signed_in? %>
+    <div class="hey-james">
+      <p>Hey James, the below links are only visible to you</p>
+      <% if current_user %>
+        <div class="edit-delete-links">
+          <%= link_to edit_project_path(@project) do %>
+            <div class="edit links-circle">
+              <%= image_tag 'weld.png', class: "links-icons" %>
+            </div>
+          <% end %>
+          <%= link_to project_path(@project), method: :delete do %>
+            <div class="delete links-circle">
+              <%= image_tag 'bin.png', class: "links-icons" %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
-<% if user_signed_in? %>
-  <div class="hey-james">
-    <p>Hey James, the below links are only visible to you</p>
-    <p><%= link_to "Edit this project", edit_project_path(@project) %></p>
-    <p><%= link_to "Delete this project", project_path(@project), method: :delete %></p>
-  </div>
-<% end %>
 
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-image">

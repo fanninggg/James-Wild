@@ -14,9 +14,9 @@
         </div>
         <p class="text-center bold-large">To be sent a James Wild sculpture brochure, please enter your email here</p>
         <div class="newsletter-signup">
-          <%= simple_form_for (@contact) do |f| %>
-            <%= f.input :email, label: false %>
-            <%= f.submit "SEND", class: "btn btn-primary" %>
+          <%= simple_form_for (@contact), html: {class: 'form-inline contact-form'} do |f| %>
+              <%= f.input :email, label: false, class: "form-control" %>
+              <%= f.submit "SEND", class: "btn send-email-button" %>
           <% end %>
         </div>
       </div>
