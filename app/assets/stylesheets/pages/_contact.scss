@@ -96,6 +96,7 @@
   .optional {
     width: 100%;
   }
+  margin: 0;
 }
 
 .contact-form {
@@ -171,6 +172,15 @@
     width: 50px;
   }
 
+  .contact-holder {
+    height: 50vh;
+    width: 90%;
+  }
+
+.form-center {
+  width: 100%;
+}
+
   .bold-large {
     font-size: 3.5vmin;
   }
@@ -179,7 +189,8 @@
     margin-top: 5px;
   }
 
-  // .send-button {
-  //   margin: 0;
-  // }
+  .send-button {
+    margin: 0 0 0 -5px;
+  }
+
 }

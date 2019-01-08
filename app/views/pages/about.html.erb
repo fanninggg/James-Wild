@@ -10,6 +10,9 @@
           <%= image_tag "volume_on.png", class:"volume-logo hidden", id: "volume_on" %>
           <%= image_tag "volume_off.png", class:"volume-logo", id: "volume_off" %>
         </div>
+        <%= link_to 'https://vimeo.com/124198236' do %>
+          <%= image_tag 'video-link.png', class: "video-text"  %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -36,7 +39,7 @@
     </div>
   </div>
   <div class="bottom-margin text-center">
-    <a href="https://vimeo.com/124198236" class="link-text">For more videos about James Wild Sculpture...</a>
+    <a href="https://vimeo.com/user7991472" class="link-text">For more videos about James Wild Sculpture...</a>
   </div>
 </div>
 
@@ -49,13 +52,11 @@
     volumeOn.classList.toggle("hidden");
     volumeOff.classList.toggle("hidden");
     video.muted = false;
-    console.log(video.muted)
   });
 
   volumeOn.addEventListener('click', function() {
     volumeOn.classList.toggle("hidden");
     volumeOff.classList.toggle("hidden");
     video.muted = true;
-    console.log(video.muted)
   });
 </script>
