@@ -1,5 +1,5 @@
 .news-body {
-  min-height: 82vh;
+  min-height: calc(100vh - 160px);
   width: 100vw;
   background-repeat: no-repeat;
   background-size: cover;
@@ -23,10 +23,9 @@
 .header-text {
   color: #505050;
   text-align: center;
-  margin-top: 6vh;
-  margin-bottom: 6vh;
-  font-size: 24px;
-  font-family: "antic";
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-family: "Open Sans";
 }
 .update-header {
   color: #505050;
@@ -42,7 +41,7 @@
   display: flex;
   height: calc(100vw * 0.14);
   overflow: hidden;
-  font-family: "Antic";
+  font-family: "Open Sans";
 }
 .update-description {
   margin-bottom: 5px;
@@ -58,6 +57,7 @@
   flex-direction: column;
   display: flex;
   justify-content: space-between;
+  overflow: scroll;
 }
 .update-image {
   width: 35%;
@@ -75,6 +75,9 @@
   .update-card {
     width: 85%;
     height: calc(100vw * 0.2);
+  }
+  .news-body {
+    min-height: calc(100vh - 140px);
   }
 }
 

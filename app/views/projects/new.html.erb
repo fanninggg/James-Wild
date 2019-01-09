@@ -1,12 +1,37 @@
-<%= form_for @project do |f| %>
-  <%= f.label :name, 'Project name', class:"form-control-label" %>
-  <%= f.text_field :name, class:"form-control" %>
-  <%= f.label :description, 'Project Description', class:"form-control-label" %>
-  <%= f.text_field :description, class:"form-control", id: :project_description%>
-  <%= f.select :bronze, ["BRONZE", "SCRAP"] %>
-  <%= f.label :photos, 'Project Photos', class:"form-control-label" %>
-  <%= f.fields_for :photos do |photo| %>
-    <%= photo.file_field :url, multiple: true, name:"photos[url][]", id: :project_images %>
-  <% end %>
-  <%= f.submit class: "btn btn-primary btn-lg" %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <%= form_for @project do |f| %>
+        <br>
+        <%= f.select :bronze, ["BRONZE", "SCRAP"] %>
+        <br>
+        <%= f.label :featured, 'Latest Work?', class:"form-control-label" %>
+        <%= f.check_box :featured, as: :boolean %>
+        <br>
+        <%= f.label :name, 'Project name', class:"form-control-label" %>
+        <%= f.text_field :name, class:"form-control" %>
+        <%= f.label :description, 'Project Location', class:"form-control-label" %>
+        <%= f.text_field :description, class:"form-control", id: :project_description%>
+        <%= f.label :year, 'Project year', class:"form-control-label" %>
+        <%= f.text_field :year, class:"form-control" %>
+        <%= f.label :finish, 'Project finish', class:"form-control-label" %>
+        <%= f.text_field :finish, class:"form-control" %>
+        <%= f.label :dimensions, 'Project dimensions', class:"form-control-label" %>
+        <%= f.text_field :dimensions, class:"form-control" %>
+        <%= f.label :edition, 'Project edition', class:"form-control-label" %>
+        <%= f.text_field :edition, class:"form-control" %>
+        <%= f.label :price, 'Project price', class:"form-control-label" %>
+        <%= f.text_field :price, class:"form-control" %>
+
+        <br>
+        <%= f.label :photos, 'Project Photos', class:"form-control-label" %>
+        <%= f.fields_for :photos do |photo| %>
+          <%= photo.file_field :url, multiple: true, name:"photos[url][]", id: :project_images %>
+        <% end %>
+        <br>
+        <%= f.submit class: "btn btn-primary btn-lg" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

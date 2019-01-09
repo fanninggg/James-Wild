@@ -5,9 +5,8 @@
   justify-content: space-between;
   padding: 0px 15px;
   color: rgba(80,80,80,1);
-  height: 10vh;
-  font-family: 'Antic', sans-serif;
-  font-size: 16px;
+  height: 80px;
+  font-family: 'Open Sans', sans-serif;
   a:hover {
     color: rgba(120,120,120,1);
     text-decoration: none;
@@ -27,6 +26,7 @@
 }
 .footer-left {
   width: 40%;
+  text-align: left;
 }
 .footer-insta {
   font-size: 4vmin;
@@ -45,22 +45,19 @@
   margin-bottom: 12.5px;
 }
 
-@media only screen and (max-width: 400px) {
-  .footer {
-    font-size: 10px;
-    height: 8vh;
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  .footer {
-    font-size: 14px;
-    height: 8vh;
-  }
+@media only screen and (max-width: 900px) {
   .margin-top {
     margin: 12.5px 0 0;
   }
   .margin-link {
     margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .footer {
+    p {
+      font-size: 12px;
+    }
   }
 }

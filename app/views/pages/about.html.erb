@@ -1,7 +1,7 @@
 <div class="about-container">
   <div class="home-video">
     <div class="player" >
-      <%= video_tag "James-Wild-About.mp4", class: "player__video-about viewer", id: "video_home", autoplay: true, muted: true%>
+      <%= video_tag "https://s3.eu-west-2.amazonaws.com/hoxtondigitalpublicassets/JamesWild/james_wild_sculptures-hd_1920x1080.mp4", class: "player__video-about viewer", id: "video_home", loop: true, autoplay: true, muted: true%>
       <div class="video-logo-holder">
         <div class="logo-and-play-about">
           <%= image_tag "video-logo.png", class:"video-logo" %>
@@ -16,30 +16,28 @@
       </div>
     </div>
   </div>
-  <div class="about-text">
-    <h4 class="text-center index-header margin-bottom">ABOUT JAMES</h4>
+  <div class="about-text" style="margin-bottom: 50px;">
+    <h3 class="text-center index-header margin-bottom">ABOUT JAMES</h3>
     <p class="text-center main-content">James grew up in Cornwall, a beautiful and wild part of the UK which inspired his love for nature. It became obvious from a young age that he enjoyed creativity and craft and it was after working as an apprentice to a blacksmith in Cornwall that his work in sculpture was born.</p>
     <p class="text-center main-content">Blacksmithing gave James the traditional skills and techniques of working metal and provided the platform on which James has developed and refined his unique self-taught style of working with scrap metal, which largely relies on welding, grinding and the hammer!</p>
     <p class="text-center main-content">Since 2009 James’ style and portfolio has evolved through eye-opening research trips, working from life and the countless hours spent in the workshop. James’ ambition for each sculpture is to locate the character of the subject in the scrap metal and express a feeling and story of a wild moment in time.</p>
     <p class="text-center main-content"><em>"The question is, are we happy to suppose that our grandchildren may never be able to see an elephant except in a picture book?” Sir David Attenborough</em></p>
   </div>
-  <div class="bottom-margin">
-    <div class="container">
-      <div class="row text-center">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-xs-12 col-md-6 col-lg-4">
+        <%= image_tag ("About_1.png"), class: "about-image" %>
+      </div>
         <div class="col-xs-12 col-md-6 col-lg-4">
-          <%= image_tag ("About_1.png"), class: "about-image" %>
-        </div>
-          <div class="col-xs-12 col-md-6 col-lg-4">
-          <%= image_tag ("About_2.png"), class: "about-image" %>
-        </div>
-        <div class="col-xs-12 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-0">
-          <%= image_tag ("About_3.png"), class: "about-image" %>
-        </div>
+        <%= image_tag ("About_2.png"), class: "about-image" %>
+      </div>
+      <div class="col-xs-12 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-0">
+        <%= image_tag ("About_3.png"), class: "about-image" %>
       </div>
     </div>
   </div>
   <div class="bottom-margin text-center">
-    <a href="https://vimeo.com/user7991472" class="link-text" target="_blank">For more videos about James Wild Sculpture...</a>
+    <a href="https://vimeo.com/user7991472" class="link-text" target="_blank">For more videos...</a>
   </div>
 </div>
 

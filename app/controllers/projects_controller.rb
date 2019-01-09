@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @photos = @project.photos.select{ |photo| photo.url.url != nil }
   end
 
   def new
@@ -40,8 +41,10 @@ class ProjectsController < ApplicationController
 
   def update
     @project.update(project_params)
-    @photo = @project.photos.build
-    if @project.save!
+    if @project.save && params[:photos]
+      params[:photos]['url'].each do |uri|
+        @project.photos.create!(url: uri)
+      end
       redirect_to project_path(@project)
     else
       render :edit
@@ -60,6 +63,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :description, photos_attributes: [:url, :id, :project_id])
+    params.require(:project).permit(:name, :description, :featured, :edition, :year, :dimensions, :finish, :price, photos_attributes: [:url, :id, :project_id])
   end
 end
