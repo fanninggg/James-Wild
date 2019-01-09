@@ -1,8 +1,26 @@
 <div class="show-container">
   <div class="show-text">
-    <p class="show-title"><%= @project.name %></p>
-    <p class="no-margin"><%= sanitize @project.description %></p>
-    <p>Patinated finish</p>
+    <h3><%= @project.name %></h3>
+    <% if @project.description != "" %>
+      <p>Location: <%= @project.description %></p>
+    <% end %>
+    <% if @project.year != "" %>
+      <p>Year: <%= @project.year %></p>
+    <% end %>
+    <% if @project.finish != "" %>
+      <p>Finish: <%= @project.finish %></p>
+    <% end %>
+    <% if @project.bronze == true %>
+      <% if @project.dimensions != "" %>
+        <p>Dimensions: <%= @project.dimensions %></p>
+      <% end %>
+      <% if @project.edition != "" %>
+        <p>Edition: <%= @project.edition %></p>
+      <% end %>
+      <% if @project.price != "" %>
+        <p>Price: <%= @project.price %></p>
+      <% end %>
+    <% end %>
   </div>
   <% if @project.photos %>
     <div class="show-images" data-images='<%= @project.photos.map { |p| p.url.url} %>' id="image-access">

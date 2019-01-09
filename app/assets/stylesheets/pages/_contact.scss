@@ -1,8 +1,8 @@
 .contact-container {
-  background-image: asset-url('contact-splash');
+  background-image: asset-url('bronze_background_new.jpg');
   background-position: bottom;
   background-size: cover;
-  min-height: 82vh;
+  min-height: calc(100vh - 160px);
   width: 100vw;
   display: flex;
   justify-content: space-between;
@@ -10,6 +10,13 @@
   color: rgba(80,80,80,1);
 }
 
+.email-label::placeholder {
+  font-family: "Open Sans";
+}
+
+.email-label {
+  font-family: "Open Sans";
+}
 .section {
   width: 50vw;
   display: flex;
@@ -24,10 +31,14 @@
   height: 60vh;
   width: 35vw;
   margin-left: 10vw;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  min-height: 600px;
 }
 
 .contact-holder {
-  font-family: "Antic";
+  min-height: 500px;
+  font-family: "Open Sans";
   height: 50vh;
   width: 30vw;
   display: flex;
@@ -48,18 +59,10 @@
 }
 
 .contact {
-  font-size: 3.5vmin;
   font-weight: lighter;
 }
 
 .bold-large {
-  font-size: 2.5vmin;
-  font-weight: bold;
-  margin-bottom: 0;
-}
-
-.font-medium {
-  font-size: 2.1vmin;
   font-weight: bold;
   margin-bottom: 0;
 }
@@ -88,7 +91,7 @@
 #contact_email::placeholder {
   color: #505050;
   opacity: 1;
-  font-style: italic;
+  font-size: 22px;
 }
 
 .contact_email {
@@ -141,7 +144,6 @@
 
 @media only screen and (max-width: 1200px) {
   .contact-container {
-    min-height: 82vh;
     width: 100vw;
     color: rgba(80,80,80,1);
     display: block;
@@ -163,9 +165,9 @@
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
   .contact-container {
-    min-height: 86vh;
+    min-height: calc(100vh - 140px);
   }
   .contact-avatar {
     height: 50px;
@@ -177,12 +179,8 @@
     width: 90%;
   }
 
-.form-center {
-  width: 100%;
-}
-
-  .bold-large {
-    font-size: 3.5vmin;
+  .form-center {
+    width: 100%;
   }
 
   .send-button-holder {
@@ -192,5 +190,14 @@
   .send-button {
     margin: 0 0 0 -5px;
   }
+  #contact_email::placeholder {
+    font-size: 18px;
+  }
 
+}
+
+@media only screen and (max-width: 900px) {
+  #contact_email::placeholder {
+    font-size: 16px;
+  }
 }

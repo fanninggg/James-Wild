@@ -1,13 +1,23 @@
 body {
   background-color: #F9F9F9;
   font-family: 'Open Sans', sans-serif;
+  height: 100vh;
 }
 
 a {
   color: rgba(80,80,80,1);
+  font-size: 22px;
   &:hover {
     color: rgba(80,80,80,1);
   }
+}
+
+p {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 24px;
 }
 
 .player {
@@ -22,7 +32,7 @@ a {
 .player__video {
   width: 100%;
   position: absolute;
-  top: calc(-100vw / 12.5);
+  top: calc(-100vw / 16);
   left: 0;
 }
 .player__video-about {
@@ -45,7 +55,6 @@ a {
 
 .logo-and-play {
   height: 25vh;
-  margin-bottom: 16vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,7 +68,7 @@ a {
 .video-logo {
   height: 100px;
   width: 100px;
-  opacity: 0.3;
+  opacity: 0.7;
 }
 
 .volume-toggle {
@@ -124,9 +133,7 @@ a {
 .main-content {
   color: rgba(80,80,80,1);
   font-weight: lighter;
-  font-size: 2vmin;
-  padding-bottom: 30px;
-  font-family: "Antic";
+  font-family: "Open Sans";
 }
 
 .subheader {
@@ -171,6 +178,14 @@ a {
   // transition: font-size .5s;
 }
 
+.latest-work-card:hover .latest-work-type {
+  font-size: 24px;
+}
+
+.latest-work-card:hover .latest-work-title {
+  font-size: 24px;
+}
+
 .linear-gradient-hover {
   background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0));
   // width: 300px;
@@ -178,20 +193,14 @@ a {
   transition: background-image 5s;
 }
 
-.latest-work-card:hover .latest-work-type {
-  font-size: 16px;
-}
 
-.latest-work-card:hover .latest-work-title {
-  font-size: 16px;
-}
 
 .latest-work-card:hover .linear-gradient-hover {
   background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,0.2));
 }
 
 .main-body {
-  min-height: 82vh;
+  min-height: calc(100vh - 160px);
 }
 
 @media only screen and (min-width: 800px) {
@@ -202,8 +211,23 @@ a {
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
+  p {
+    font-size: 18px;
+  }
+  a {
+    font-size: 18px;
+  }
+  h3 {
+    font-size: 19px;
+  }
+  .latest-work-card:hover .latest-work-type {
+    font-size: 19px;
+  }
 
+  .latest-work-card:hover .latest-work-title {
+    font-size: 19px;
+  }
   .logo-and-play {
     height: 10vh;
   }
@@ -212,15 +236,22 @@ a {
     width: 50px;
   }
   .player_button {
-    font-size: 25pxr;
+    font-size: 25px;
   }
   .main-body {
-    min-height: 84vh;
+    min-height: calc(100vh - 140px);
   }
 }
 
 @media only screen and (max-width: 600px) {
 
+
+  p {
+    font-size: 16px;
+  }
+  a {
+    font-size: 16px;
+  }
   .logo-and-play {
     height: 5vh;
   }
@@ -232,4 +263,5 @@ a {
     font-size: 15px;
   }
 }
+
 

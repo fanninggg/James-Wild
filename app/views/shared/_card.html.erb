@@ -2,7 +2,7 @@
   <%= link_to project_path(project) do %>
     <div class="card-image" style="background-position:center;background-image: url(<%= project.photos.empty? ? image_path("bronze_background.png") : cl_image_path(project.photos.first.url.url, quality: "auto:low")%>);">
     </div>
-    <p><%= project.name %></p>
+    <h3 style="margin-top:10px;"><%= project.name %></h3>
     <% if current_user %>
       <div class="edit-delete-links">
         <%= link_to edit_project_path(project) do %>

@@ -1,7 +1,7 @@
 <div class="home-container">
   <div class="home-video">
     <div class="player">
-      <%= video_tag "https://s3.eu-west-2.amazonaws.com/hoxtondigitalpublicassets/JamesWild/Scotland.mp4", class: "player__video viewer", id: "video_home", autoplay: true, muted: true%>
+      <%= video_tag "https://s3.eu-west-2.amazonaws.com/hoxtondigitalpublicassets/JamesWild/Origwolves_of_scotland_1280x676.mp4", class: "player__video viewer", id: "video_home", loop: true, autoplay: true, muted: true%>
       <div class="video-logo-holder">
         <div class="logo-and-play">
           <%= image_tag "video-logo.png", class:"video-logo" %>
@@ -21,7 +21,7 @@
     <p class="text-center main-content">His ambition is to build awareness and appreciation for the wild parts of our planet and the life that inhabits them. Conservation and a love for working from life was the catalyst on which James started sculpting in 2009 and since then he has completed both private and public works of art in the UK and Overseas.</p>
   </div>
   <div class="home-latest-work">
-    <h4 class="index-header">LATEST WORK</h4>
+    <h3 class="index-header">LATEST WORK</h3>
     <div class="vertical-margin">
       <div class="container">
         <div class="row">
@@ -30,12 +30,12 @@
               <%= link_to project_path(project) do %>
                 <div class="latest-work-card" style="background-image: url(<%= project.photos.empty? ? image_path("bronze_background.png") : cl_image_path(project.photos.first.url.url, quality: "auto:low")%>);">
                   <div class="linear-gradient-hover">
-                    <p class="latest-work-type">
+                    <h3 style="margin-top:10px;" class="latest-work-type">
                       <%= project.bronze? ? "BRONZE" : "SCRAP" %>
-                    </p>
-                    <p class="latest-work-title">
+                    </h3>
+                    <h3 class="latest-work-title">
                       <%= project.name %>
-                    </p>
+                    </h3>
                   </div>
                 </div>
               <% end %>
