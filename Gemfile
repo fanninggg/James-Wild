@@ -11,7 +11,6 @@ gem 'redis'
 gem 'cloudinary', '~> 1.9.1'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'carrierwave', '~> 1.2'
-gem 'hotloader'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
