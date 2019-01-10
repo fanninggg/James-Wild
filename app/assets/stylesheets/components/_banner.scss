@@ -21,5 +21,23 @@
 }
 
 .circles {
-  max-width: 90vw;
+  max-width: 60vw;
+}
+
+.scrap-circles {
+  max-width: 50vw;
+}
+
+@media only screen and (max-width: 900px) {
+  .about-text {
+    display: none;
+  }
+  .circles {
+    max-width: 80vw;
+  }
+
+  .scrap-circles {
+    max-width: 70vw;
+  }
+
 }

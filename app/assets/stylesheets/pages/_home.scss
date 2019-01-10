@@ -6,14 +6,14 @@ body {
 
 a {
   color: rgba(80,80,80,1);
-  font-size: 22px;
+  font-size: 20px;
   &:hover {
     color: rgba(80,80,80,1);
   }
 }
 
 p {
-  font-size: 22px;
+  font-size: 20px;
 }
 
 h3 {
@@ -66,15 +66,15 @@ h3 {
   justify-content: center;
 }
 .video-logo {
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   opacity: 0.7;
 }
 
 .volume-toggle {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 5px;
+  left: 5px;
 }
 
 .volume-logo {
@@ -83,7 +83,7 @@ h3 {
   opacity: 0.3;
   position: absolute;
   bottom: 10px;
-  right: 10px;
+  left: 15px;
   &:hover {
     cursor: pointer;
     opacity: 0.7;
@@ -97,7 +97,7 @@ h3 {
   opacity: 0.3;
   position: absolute;
   bottom: 15px;
-  left: 15px;
+  right: 15px;
   &:hover {
     opacity: 0.7;
   }
@@ -210,16 +210,33 @@ h3 {
     }
   }
 }
-
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1300px) {
+  .video-logo {
+    height: 100px;
+    width: 100px;
+  }
   p {
-    font-size: 18px;
+    font-size: 16px;
   }
   a {
-    font-size: 18px;
+    font-size: 16px;
   }
+}
+@media only screen and (max-width: 900px) {
+
   h3 {
     font-size: 19px;
+  }
+  .volume-logo {
+    height: 15px;
+    width: 15px;
+    bottom: 0px;
+    left: 0px;
+  }
+  .video-text {
+    height: 10px;
+    right: 10px;
+    bottom: 10px;
   }
   .latest-work-card:hover .latest-work-type {
     font-size: 19px;
@@ -232,8 +249,8 @@ h3 {
     height: 10vh;
   }
   .video-logo {
-    height: 50px;
-    width: 50px;
+    height: 75px;
+    width: 75px;
   }
   .player_button {
     font-size: 25px;
@@ -247,17 +264,17 @@ h3 {
 
 
   p {
-    font-size: 16px;
+    font-size: 14px;
   }
   a {
-    font-size: 16px;
+    font-size: 14px;
   }
   .logo-and-play {
     height: 5vh;
   }
   .video-logo {
-    height: 25px;
-    width: 25px;
+    height: 50px;
+    width: 50px;
   }
   .player_button {
     font-size: 15px;
