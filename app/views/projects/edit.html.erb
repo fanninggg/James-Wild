@@ -3,8 +3,6 @@
     <div class="col-6">
       <%= form_for @project do |f| %>
         <br>
-        <%= f.select :bronze, ["BRONZE", "SCRAP"] %>
-        <br>
         <%= f.label :featured, 'Latest Work?', class:"form-control-label" %>
         <%= f.check_box :featured, as: :boolean %>
         <br>

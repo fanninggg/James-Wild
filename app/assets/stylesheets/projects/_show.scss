@@ -2,6 +2,15 @@
   text-align: right;
 }
 
+#close-modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+}
+
 .show-container {
   padding: 10vh 10vw;
 }
@@ -9,6 +18,9 @@
 .show-text {
   color: rgba(100,100,100,1);
   margin-bottom: 30px;
+}
+.modal {
+  height: 100vh !important;
 }
 
 .show-title {
@@ -34,8 +46,7 @@
 }
 
 .modal-image {
-  height: 80vh;
-  margin-top: 10vh;
+  height: 100vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,7 +55,7 @@
 }
 
 #modal-image {
-  height: 80vh;
+  height: 100vh;
 }
 
 .modal-image-splash {

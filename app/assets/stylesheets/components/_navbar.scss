@@ -85,6 +85,17 @@
   line-height: 1;
 }
 
+.nodec {
+  &:focus {
+    text-decoration: none !important;
+    color: #505050;
+  }
+  &:hover {
+    text-decoration: none !important;
+    color: #505050;
+  }
+}
+
 .mobile-logo-text {
   font-size: 19px;
   margin-left: 10px;

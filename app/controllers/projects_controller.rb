@@ -41,9 +41,11 @@ class ProjectsController < ApplicationController
 
   def update
     @project.update(project_params)
-    if @project.save && params[:photos]
-      params[:photos]['url'].each do |uri|
-        @project.photos.create!(url: uri)
+    if @project.save
+      if params[:photos]
+        params[:photos]['url'].each do |uri|
+          @project.photos.create!(url: uri)
+        end
       end
       redirect_to project_path(@project)
     else

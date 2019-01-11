@@ -5,8 +5,10 @@
       <%= image_tag "Logo.jpg", class:"jw-logo" %>
     <% end %>
     <div class="navbar-name">
-      <p class="no-margin logo-text">JAMES WILD</p>
-      <p class="no-margin logo-text offset">SCULPTURE</p>
+      <%= link_to "/", class:"nodec" do %>
+        <p class="no-margin logo-text">JAMES WILD</p>
+        <p class="no-margin logo-text offset">SCULPTURE</p>
+      <% end %>
     </div>
     <% if user_signed_in? %>
       <%= link_to destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link-dark" do %>

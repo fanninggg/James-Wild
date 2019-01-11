@@ -22,9 +22,14 @@
       <% end %>
     <% end %>
   </div>
-  <% if @project.photos %>
+  <% if @project.photos.length > 0 %>
     <div class="show-images" data-images='<%= @project.photos.map { |p| p.url.url} %>' id="image-access">
       <div class="main-image text-center">
+        <% if user_signed_in? && @project.photos.length > 0 %>
+          <%= link_to photo_path(id:@project.photos[0], project:@project), :method => :delete do %>
+            <p>&times;</p>
+          <% end %>
+        <% end %>
         <div class="image-splash" id="main-image" alt="Main Project Photo" data-toggle="modal" data-target="#myModal" style="background-image: url(<%= cl_image_path @project.photos.first.url %>)"></div>
       </div>
       <div class="other-images">
@@ -32,6 +37,11 @@
           <div class="row">
             <% @project.photos[1..-1].each do |photo| %>
               <div class="col-xs-12 col-sm-6 col-md-3">
+                <% if user_signed_in? %>
+                  <%= link_to photo_path(id:photo, project:@project), :method => :delete do %>
+                    <p>&times;</p>
+                  <% end %>
+                <% end %>
                 <img src="<%= cl_image_path photo.url %>" class="additional-images" alt="Main Project Photo" data-toggle="modal" data-target="#myModal">
               </div>
             <% end %>
@@ -61,14 +71,16 @@
   <% end %>
 </div>
 
-
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-image">
-    <%= image_tag "left-arrow.png", id:"left-trigger" %>
-    <%= cl_image_tag @project.photos.first.url, :id=>"modal-image"%>
-    <%= image_tag "right-arrow.png", id:"right-trigger" %>
+<% if @project.photos.length > 0 %>
+  <div id="myModal" class="modal fade" role="dialog">
+    <button type="button" id="close-modal" data-dismiss="modal">&times;</button>
+    <div class="modal-image">
+      <%= image_tag "left-arrow.png", id:"left-trigger" %>
+      <%= cl_image_tag @project.photos.first.url, :id=>"modal-image"%>
+      <%= image_tag "right-arrow.png", id:"right-trigger" %>
+    </div>
   </div>
-</div>
+<% end %>
 
 <script>
   const mainImage = document.getElementById("main-image")
