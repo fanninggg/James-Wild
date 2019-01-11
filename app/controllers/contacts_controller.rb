@@ -14,6 +14,7 @@ class ContactsController < ApplicationController
     @contact.sent = false
     @contact.save
     redirect_to new_contact_path
+    flash[:notice] = "Thanks for your request, a brochure will be with you soon."
   end
 
   def sent
