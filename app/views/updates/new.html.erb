@@ -1,9 +1,16 @@
-<%= simple_form_for(@update) do |f| %>
-  <%= f.input :title, label: 'Update name', class: 'form-control' %>
-  <%= f.input :description, label: 'Update description', class: 'form-control' %>
-  <%= f.input :link, label: 'Project link', class: 'form-control' %>
-  <%= f.input :url, label: 'Project link url', class: 'form-control' %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.submit class: "btn btn-primary btn-lg" %>
-<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <%= simple_form_for(@update) do |f| %>
+        <%= f.input :title, label: 'Update name', class: 'form-control' %>
+        <%= f.input :description, label: 'Update description', class: 'form-control' %>
+        <%= f.input :link, label: 'Project link', class: 'form-control' %>
+        <%= f.input :url, label: 'Project link url', class: 'form-control' %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.submit class: "btn btn-primary btn-lg" %>
+      <% end %>
+    </div>
+  </div>
+</div>
