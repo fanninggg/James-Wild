@@ -58,7 +58,7 @@
 }
 
 #modal-image {
-  // height: 100vh;
+  max-height: 100vh;
   max-width: 80vw;
   max-height:100vh;
 }
@@ -104,20 +104,36 @@
   }
 
   .close-modal-icon {
-  height: 15px;
-  width: 15px;
-  cursor: pointer;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
   }
 
   #left-trigger {
     height: 30px;
     margin-left: 5vw;
     cursor: pointer;
+
   }
 
   #right-trigger {
     height: 30px;
     margin-right: 5vw;
     cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #modal-image {
+    max-width: 100vw;
+  }
+  #left-trigger {
+    position: absolute;
+    left: 0;
+  }
+
+  #right-trigger {
+    position: absolute;
+    right: 0;
   }
 }
