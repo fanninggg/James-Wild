@@ -3,7 +3,7 @@ class UpdatesController < ApplicationController
   before_action :find_update, only: [:show, :edit, :update, :destroy]
 
   def index
-    @updates = Update.last(10)
+    @updates = Update.last(10).reverse
   end
 
   def new
