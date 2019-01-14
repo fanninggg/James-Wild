@@ -6,8 +6,6 @@
   position: absolute;
   top: 40px;
   right: 40px;
-  height: 30px;
-  width: 30px;
 }
 
 .show-container {
@@ -20,6 +18,8 @@
 }
 .modal {
   height: 100vh !important;
+  background-color: black;
+  // display: flex;
 }
 
 .show-title {
@@ -54,11 +54,12 @@
   justify-content: space-between;
   align-items: center;
   background-color: #000;
-  box-shadow: 1px 2px 3px rgba(80,80,80,.2);
+  // box-shadow: 1px 2px 3px rgba(80,80,80,.2);
 }
 
 #modal-image {
-  height: 100vh;
+  // height: 100vh;
+  max-width: 80vw;
 }
 
 .modal-image-splash {
@@ -91,5 +92,31 @@
   cursor: pointer;
 }
 
+.modal-container {
+  display: flex;
+  height: 100vh;
+}
 
+@media only screen and (max-width: 900px) {
+  #modal-image {
+    max-width: 68vw;
+  }
 
+  .close-modal-icon {
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+  }
+
+  #left-trigger {
+    height: 30px;
+    margin-left: 5vw;
+    cursor: pointer;
+  }
+
+  #right-trigger {
+    height: 30px;
+    margin-right: 5vw;
+    cursor: pointer;
+  }
+}
