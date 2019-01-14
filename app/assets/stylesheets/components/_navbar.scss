@@ -134,17 +134,22 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+.vert-margin {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .drop-menu {
   position: absolute;
   top: 100%;
-  right: 0;
+  right: 20px;
   z-index: 1000;
   display: none;
-  min-width: 100px;
-  // display: flex;
+  min-width: 200px;
+  align-items:center;
   flex-direction: column;
   justify-content: space-around;
-  padding: 5px 20px;
+  padding: 10px 20px;
   margin: 2px 0 0;
   list-style: none;
   font-size: 18px;
@@ -161,7 +166,7 @@
   margin-bottom: 0px;
 }
 .show {
-  display: block !important;
+  display: flex !important;
 }
 
 @media only screen and (max-width: 400px) {

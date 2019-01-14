@@ -88,15 +88,13 @@
     <div class="dropdown">
       <img style="height: 30px; width: 30px; margin-right: 10px;" src="<%= image_path('menu.png') %>" alt="Hamburger" id="dropdownMenuButton">
       <div class="drop-menu" id="drop-menu">
-        <%= link_to "SCRAP", scrap_path, class:"no-margin navbar-link"%>
-        <%= link_to "BRONZE", bronze_path, class:"no-margin navbar-link"%>
-        <div style="flex-direction: column; display: flex;">
-          <%= link_to "ABOUT", about_path, class:"no-margin navbar-link"%>
-          <%= link_to "NEWS", news_path, class:"no-margin navbar-link"%>
-        </div>
-        <%= link_to "CONTACT", new_contact_path, class:"no-margin navbar-link"%>
+        <%= link_to "SCRAP", scrap_path, class:"vert-margin navbar-link"%>
+        <%= link_to "BRONZE", bronze_path, class:"vert-margin navbar-link"%>
+        <%= link_to "ABOUT", about_path, class:"vert-margin navbar-link"%>
+        <%= link_to "NEWS", news_path, class:"vert-margin navbar-link"%>
+        <%= link_to "CONTACT", new_contact_path, class:"vert-margin navbar-link"%>
         <% if current_user %>
-          <%= link_to "MAILING", contacts_path, class:"no-margin navbar-link"%>
+          <%= link_to "MAILING", contacts_path, class:"vert-margin navbar-link"%>
         <% end %>
       </div>
     </div>
