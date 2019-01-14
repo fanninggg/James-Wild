@@ -33,10 +33,10 @@
         <div class="image-splash" id="main-image" alt="Main Project Photo" data-toggle="modal" data-target="#myModal" style="background-image: url(<%= cl_image_path @project.photos.reverse.first.url %>)"></div>
       </div>
       <div class="other-images">
-        <div class="container text-center">
+        <div class="container text-center" style="width:100%">
           <div class="row">
             <% @project.photos.reverse[1..-1].each do |photo| %>
-              <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="col-xs-12 col-sm-6 col-md-3 image-card">
                 <% if user_signed_in? %>
                   <%= link_to photo_path(id:photo, project:@project), :method => :delete do %>
                     <p>&times;</p>
