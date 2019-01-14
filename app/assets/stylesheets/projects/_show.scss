@@ -71,11 +71,13 @@
 #left-trigger {
   height: 40px;
   margin-left: 5vw;
+  cursor: pointer;
 }
 
 #right-trigger {
   height: 40px;
   margin-right: 5vw;
+  cursor: pointer;
 }
 
 .modal-backdrop {
@@ -86,6 +88,7 @@
 .close-modal-icon {
   height: 20px;
   width: 20px;
+  cursor: pointer;
 }
 
 
