@@ -3,11 +3,11 @@ class ProjectsController < ApplicationController
   before_action :find_project, only: [:show, :edit, :update, :destroy]
 
   def bronze
-    @projects = Project.where(bronze: true)
+    @projects = Project.where(bronze: true).reverse
   end
 
   def scrap
-    @projects = Project.where(bronze: false)
+    @projects = Project.where(bronze: false).reverse
   end
 
   def show
