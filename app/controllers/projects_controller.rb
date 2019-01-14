@@ -12,6 +12,7 @@ class ProjectsController < ApplicationController
 
   def show
     @photos = @project.photos.select{ |photo| photo.url.url != nil }
+    @photos.reverse!
   end
 
   def new

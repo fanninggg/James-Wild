@@ -54,7 +54,7 @@
   height: calc(100vw * 0.14);
   overflow: hidden;
   font-family: "Open Sans";
-  min-height: 150px;
+  min-height: calc(70vw * 0.20);
 }
 .update-description {
   margin-bottom: 0.5vmin;
@@ -87,7 +87,7 @@
 @media only screen and (max-width: 900px) {
   .update-card {
     width: 85%;
-    height: calc(100vw * 0.2);
+    min-height: calc(85vw * 0.2)
   }
   .news-body {
     min-height: calc(100vh - 140px);
@@ -97,6 +97,6 @@
 @media only screen and (max-width: 600px) {
   .update-card {
     width: 95%;
-    height: calc(100vw * 0.2);
+    min-height: calc(95vw * 0.2)
   }
 }

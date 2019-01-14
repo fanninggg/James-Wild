@@ -23,19 +23,19 @@
     <% end %>
   </div>
   <% if @project.photos.length > 0 %>
-    <div class="show-images" data-images='<%= @project.photos.map { |p| p.url.url} %>' id="image-access">
+    <div class="show-images" data-images='<%= @project.photos.reverse.map { |p| p.url.url} %>' id="image-access">
       <div class="main-image text-center">
         <% if user_signed_in? && @project.photos.length > 0 %>
           <%= link_to photo_path(id:@project.photos[0], project:@project), :method => :delete do %>
             <p>&times;</p>
           <% end %>
         <% end %>
-        <div class="image-splash" id="main-image" alt="Main Project Photo" data-toggle="modal" data-target="#myModal" style="background-image: url(<%= cl_image_path @project.photos.first.url %>)"></div>
+        <div class="image-splash" id="main-image" alt="Main Project Photo" data-toggle="modal" data-target="#myModal" style="background-image: url(<%= cl_image_path @project.photos.reverse.first.url %>)"></div>
       </div>
       <div class="other-images">
         <div class="container">
           <div class="row">
-            <% @project.photos[1..-1].each do |photo| %>
+            <% @project.photos.reverse[1..-1].each do |photo| %>
               <div class="col-xs-12 col-sm-6 col-md-3">
                 <% if user_signed_in? %>
                   <%= link_to photo_path(id:photo, project:@project), :method => :delete do %>
@@ -93,7 +93,13 @@
   const images = JSON.parse(document.getElementById("image-access").dataset.images)
   let currentImage = images.indexOf(visibleImage)
 
-    smallImages.forEach(function(image) {
+  modalImage.addEventListener('click', function() {
+    console.log(modalImage.src)
+    modalImage.src = mainStartingImage.image.src
+    console.log(modalImage.src)
+  })
+
+  smallImages.forEach(function(image) {
     image.addEventListener('mouseover', function() {
       mainImage.style.backgroundImage = mainImage.style.backgroundImage.replace(/http.+\.\w{3,4}/, image.src)
     });
