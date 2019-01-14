@@ -73,11 +73,11 @@
 
 <% if @project.photos.length > 0 %>
   <div id="myModal" class="modal fade" role="dialog">
-    <div data-dismiss="modal"><%= image_tag 'delete.png', class: "close-modal-icon", id:"close-modal" %></div>
+    <div data-dismiss="modal"><%= image_tag 'close.png', class: "close-modal-icon", id:"close-modal" %></div>
     <div class="modal-image">
-      <%= image_tag "left-arrow.png", id:"left-trigger" %>
+      <%= image_tag "back.png", id:"left-trigger" %>
       <%= cl_image_tag @project.photos.first.url, :id=>"modal-image"%>
-      <%= image_tag "right-arrow.png", id:"right-trigger" %>
+      <%= image_tag "next.png", id:"right-trigger" %>
     </div>
   </div>
 <% end %>
