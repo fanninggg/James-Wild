@@ -1,26 +1,41 @@
 <div class="show-container">
   <div class="show-text">
-    <h3 style="font-size:20px;"><%= @project.name %></h3>
-    <% if @project.description != "" %>
-      <p>Location: <%= @project.description %></p>
-    <% end %>
-    <% if @project.year != "" %>
-      <p>Year: <%= @project.year %></p>
-    <% end %>
-    <% if @project.finish != "" %>
-      <p>Finish: <%= @project.finish %></p>
-    <% end %>
-    <% if @project.bronze == true %>
-      <% if @project.dimensions != "" %>
-        <p>Dimensions: <%= @project.dimensions %></p>
+    <h3 style="font-size:20px;font-weight: bold;margin-bottom: 20px;text-align:center;"><%= @project.name %></h3>
+    <div class="row">
+      <% if @project.description != "" %>
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 deets">
+          <p><%= @project.description %></p>
+        </div>
       <% end %>
-      <% if @project.edition != "" %>
-        <p>Edition: <%= @project.edition %></p>
+      <% if @project.year != "" %>
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 deets">
+          <p><%= @project.year %></p>
+        </div>
       <% end %>
-      <% if @project.price != "" %>
-        <p>Price: <%= @project.price %></p>
+      <% if @project.finish != "" %>
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 deets">
+          <p><%= @project.finish %></p>
+        </div>
       <% end %>
-    <% end %>
+      <% if @project.bronze == true %>
+        <% if @project.dimensions != "" %>
+          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 deets">
+            <p><%= @project.dimensions %></p>
+          </div>
+        <% end %>
+        <% if @project.edition != "" %>
+          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 deets">
+            <p>Edition <%= @project.edition %></p>
+          </div>
+        <% end %>
+        <% if @project.price != "" %>
+          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 deets">
+            <p><%= @project.price %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
   </div>
   <% if @project.photos.length > 0 %>
     <div class="show-images" data-images='<%= @project.photos.reverse.map { |p| p.url.url} %>' id="image-access">
@@ -30,12 +45,12 @@
             <p>&times;</p>
           <% end %>
         <% end %>
-        <div class="image-splash" id="main-image" alt="Main Project Photo" data-toggle="modal" data-target="#myModal" style="background-image: url(<%= cl_image_path @project.photos.reverse.first.url %>)"></div>
+        <div class="image-splash" id="main-image" alt="Main Project Photo" data-toggle="modal" data-target="#myModal" style="background-image: url(<%= cl_image_path @project.photos.first.url %>)"></div>
       </div>
       <div class="other-images">
         <div class="container text-center" style="width:100%">
           <div class="row">
-            <% @project.photos.reverse[1..-1].each do |photo| %>
+            <% @project.photos[1..-1].each do |photo| %>
               <div class="col-xs-12 col-sm-6 col-md-3 image-card">
                 <% if user_signed_in? %>
                   <%= link_to photo_path(id:photo, project:@project), :method => :delete do %>

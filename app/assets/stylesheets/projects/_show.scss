@@ -1,6 +1,12 @@
 .hey-james {
   text-align: right;
 }
+.deets {
+  text-align: center;
+  p {
+    margin-bottom: 6px;
+  }
+}
 
 #close-modal {
   position: absolute;
@@ -9,7 +15,7 @@
 }
 
 .show-container {
-  padding: 10vh 10vw;
+  padding: 2vh 10vw;
 }
 
 .show-text {
@@ -35,7 +41,7 @@
 .image-splash {
   width: 80vw;
   height: 80vh;
-  background-position: center;
+  background-position: top;
   background-repeat:no-repeat;
   background-size: contain;
   cursor: pointer;
@@ -99,6 +105,9 @@
 }
 
 @media only screen and (max-width: 900px) {
+  .show-text {
+    margin-bottom: 15px;
+  }
   #modal-image {
     max-width: 68vw;
   }
