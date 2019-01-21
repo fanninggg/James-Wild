@@ -1,6 +1,6 @@
 <div class="card">
   <%= link_to project_path(project) do %>
-    <div class="card-image" style="background-position:center;background-image: url(<%= project.photos.empty? ? image_path("bronze_background.png") : cl_image_path(project.photos.first.url.url, quality: "auto:low")%>);">
+    <div class="card-image" style="background-position:center;background-image: url(<%= project.photos.empty? ? image_path("Logo.jpg") : cl_image_path(project.photos.first.url.url, quality: "auto:low")%>);">
     </div>
     <h3 style="margin-top:10px;"><%= project.name %></h3>
     <% if current_user %>

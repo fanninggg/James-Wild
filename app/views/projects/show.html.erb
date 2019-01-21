@@ -16,13 +16,13 @@
             <p>&times;</p>
           <% end %>
         <% end %>
-        <div class="image-splash" id="main-image" alt="Main Project Photo" data-toggle="modal" data-target="#myModal" style="background-image: url(<%= cl_image_path @project.photos.first.url %>)"></div>
+        <img src="<%= @project.photos.first.url %>" alt="" id="main-image" class="new-image" data-toggle="modal" data-target="#myModal">
       </div>
       <div class="other-images">
         <div class="container text-center" style="width:100%">
           <div class="row">
             <% @project.photos[1..-1].each do |photo| %>
-              <div class="col-xs-12 col-sm-6 col-md-3 image-card">
+              <div class="col-xs-3 image-card">
                 <% if user_signed_in? %>
                   <%= link_to photo_path(id:photo, project:@project), :method => :delete do %>
                     <p>&times;</p>
@@ -36,6 +36,15 @@
       </div>
     </div>
   <% end %>
+
+
+  <% @project.photos.each do |photo| %>
+    <div class="mobile-image">
+      <img src="<%= cl_image_path photo.url %>" class="additional-images" alt="Main Project Photo" data-toggle="modal" data-target="#myModal">
+    </div>
+  <% end %>
+
+
   <% if user_signed_in? %>
     <div class="hey-james">
       <p>Hey James, the below links are only visible to you</p>
@@ -73,7 +82,7 @@
 <script>
   const mainImage = document.getElementById("main-image")
   const smallImages = document.querySelectorAll('.additional-images')
-  const mainStartingImage = mainImage.style.backgroundImage
+  const mainStartingImage = mainImage.src
   const leftTrigger = document.getElementById("left-trigger")
   const rightTrigger = document.getElementById("right-trigger")
   const modalImage = document.getElementById("modal-image")
@@ -89,10 +98,10 @@
 
   smallImages.forEach(function(image) {
     image.addEventListener('mouseover', function() {
-      mainImage.style.backgroundImage = mainImage.style.backgroundImage.replace(/http.+\.\w{3,4}/, image.src)
+      mainImage.src = image.src
     });
     image.addEventListener('mouseout', function() {
-      mainImage.style.backgroundImage = mainStartingImage
+      mainImage.src = mainStartingImage
     })
     image.addEventListener('click', function() {
       console.log(modalImage.src)

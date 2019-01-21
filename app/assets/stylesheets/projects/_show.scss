@@ -15,7 +15,7 @@
 }
 
 .show-container {
-  padding: 2vh 10vw;
+  padding: 2vh 10vw 6vh 10vw;
 }
 
 .show-text {
@@ -29,6 +29,7 @@
 }
 .image-card {
   padding: 0 auto;
+  height: 20vh;
 }
 .show-title {
   font-size: 3vmin;
@@ -36,22 +37,29 @@
 
 .main-image {
   margin-bottom: 5vh;
+  height: 70vh;
 }
 
-.image-splash {
-  width: 80vw;
-  height: 80vh;
-  background-position: top;
-  background-repeat:no-repeat;
-  background-size: contain;
+.new-image {
+  max-width: 80vw;
+  max-height: 70vh;
   cursor: pointer;
 }
-
+.mobile-header {
+  display: none;
+  height: 70vh;
+  background-image: url("http://res.cloudinary.com/hoxton-digital/image/upload/v1548070045/hjrsu5faaiicl4liiwox.jpg");
+  background-size: cover;
+  background-position: center;
+}
 .additional-images {
   cursor: pointer;
-  height: 150px;
+  // height: 150px;
+  max-width: 100%;
+  max-height: calc(100vw / 4);
   box-shadow: 1px 2px 5px rgba(180,180,180,1);
   margin-bottom: 40px;
+  max-height: 100%;
 }
 
 .modal-image {
@@ -103,8 +111,26 @@
   display: flex;
   height: 100vh;
 }
+.mobile-image {
+  display: none;
+}
 
 @media only screen and (max-width: 900px) {
+  .main-text {
+    padding-top: 40px;
+  }
+  .mobile-header {
+    display: block;
+  }
+  .home-video {
+    display: none;
+  }
+  .show-images {
+    display: none;
+  }
+  .mobile-image {
+    display: block;
+  }
   .show-text {
     margin-bottom: 15px;
   }
@@ -140,7 +166,6 @@
     position: absolute;
     left: 0;
   }
-
   #right-trigger {
     position: absolute;
     right: 0;

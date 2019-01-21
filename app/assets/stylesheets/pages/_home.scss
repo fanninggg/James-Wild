@@ -19,6 +19,22 @@ p {
 h3 {
   font-size: 24px;
 }
+.mobile-header {
+  position: relative;
+}
+.mobile-tag {
+  position: absolute;
+  bottom: 15px;
+  text-align: right;
+  right: 25px;
+  font-weight: lighter;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  opacity: 0.5;
+  h3 {
+    line-height: 5px;
+  }
+}
 
 .player {
   width: 100vw;
@@ -196,7 +212,7 @@ h3 {
   transition: background-image 5s;
 }
 .home-video {
-  background-image: asset-url('wolves.png');
+  background-image: url('http://res.cloudinary.com/hoxton-digital/image/upload/v1548067192/qjqbb9yzfpxcdkindkna.png');
   background-size: cover;
   background-position: 50% 53.5%;
 }
