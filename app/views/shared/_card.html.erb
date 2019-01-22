@@ -1,6 +1,6 @@
 <div class="card">
   <%= link_to project_path(project) do %>
-    <div class="card-image" style="background-position:center;background-image: url(<%= project.photos.empty? ? image_path("Logo.jpg") : cl_image_path(project.photos.first.url, :format => :webp, :quality => :auto)%>);">
+    <div class="card-image" style="background-position:center;background-image: url(<%= project.photos.empty? ? image_path("Logo.jpg") : cl_image_path(project.photos.first.url, :format => :jpeg, :quality => :auto)%>);">
     </div>
     <h3 style="margin-top:10px;"><%= project.name %></h3>
     <% if current_user %>
