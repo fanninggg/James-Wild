@@ -16,7 +16,7 @@
             <p>&times;</p>
           <% end %>
         <% end %>
-        <img src="<%= cl_image_path(@project.photos.first.url, :format => :jpeg, :quality => :auto) %>" alt="" id="main-image" class="new-image" data-toggle="modal" data-target="#myModal">
+        <img src="<%= cl_image_path(@project.photos.first.url, :format => :jpeg, :quality => 20) %>" alt="" id="main-image" class="new-image" data-toggle="modal" data-target="#myModal">
       </div>
       <div class="other-images">
         <div class="container text-center" style="width:100%">
@@ -28,7 +28,7 @@
                     <p>&times;</p>
                   <% end %>
                 <% end %>
-                <img src="<%= cl_image_path(photo.url, :format => :jpeg, :quality => :auto) %>" class="additional-images" alt="Main Project Photo" data-toggle="modal" data-target="#myModal">
+                <img src="<%= cl_image_path(photo.url, :format => :jpeg, :quality => 20) %>" class="additional-images" alt="Main Project Photo" data-toggle="modal" data-target="#myModal">
               </div>
             <% end %>
           </div>
@@ -40,7 +40,7 @@
 
   <% @project.photos.each do |photo| %>
     <div class="mobile-image">
-      <img src="<%= cl_image_path(photo.url, :format => :jpeg, :quality => :auto) %>" class="additional-images" alt="Main Project Photo" data-toggle="modal" data-target="#myModal">
+      <img src="<%= cl_image_path(photo.url, :format => :jpeg, :quality => 20) %>" class="additional-images" alt="Main Project Photo" data-toggle="modal" data-target="#myModal">
     </div>
   <% end %>
 
@@ -72,7 +72,7 @@
     <div class="modal-container">
       <div class="modal-image">
         <%= image_tag "back.png", id:"left-trigger" %>
-        <%= cl_image_tag(@project.photos.first.url, :format => :jpeg, :quality => :auto, :id=>"modal-image")%>
+        <%= cl_image_tag(@project.photos.first.url, :format => :jpeg, :quality => 20, :id=>"modal-image")%>
         <%= image_tag "next.png", id:"right-trigger" %>
       </div>
     </div>
