@@ -9,14 +9,14 @@
     <% end %>
   </div>
   <% if @project.photos.length > 0 %>
-    <div class="show-images" data-images='<%= @project.photos.reverse.map { |p| p.url.url} %>' id="image-access">
+    <div class="show-images" data-images='<%= @project.photos.reverse.map { |p| cl_image_path( p.url.url, :format => :webp, :quality => :auto) } %>' id="image-access">
       <div class="main-image text-center">
         <% if user_signed_in? && @project.photos.length > 0 %>
           <%= link_to photo_path(id:@project.photos[0], project:@project), :method => :delete do %>
             <p>&times;</p>
           <% end %>
         <% end %>
-        <img src="<%= @project.photos.first.url %>" alt="" id="main-image" class="new-image" data-toggle="modal" data-target="#myModal">
+        <img src="<%= cl_image_path(@project.photos.first.url, :format => :webp, :quality => :auto) %>" alt="" id="main-image" class="new-image" data-toggle="modal" data-target="#myModal">
       </div>
       <div class="other-images">
         <div class="container text-center" style="width:100%">
@@ -28,7 +28,7 @@
                     <p>&times;</p>
                   <% end %>
                 <% end %>
-                <img src="<%= cl_image_path photo.url %>" class="additional-images" alt="Main Project Photo" data-toggle="modal" data-target="#myModal">
+                <img src="<%= cl_image_path(photo.url, :format => :webp, :quality => :auto) %>" class="additional-images" alt="Main Project Photo" data-toggle="modal" data-target="#myModal">
               </div>
             <% end %>
           </div>
@@ -40,7 +40,7 @@
 
   <% @project.photos.each do |photo| %>
     <div class="mobile-image">
-      <img src="<%= cl_image_path photo.url %>" class="additional-images" alt="Main Project Photo" data-toggle="modal" data-target="#myModal">
+      <img src="<%= cl_image_path(photo.url, :format => :webp, :quality => :auto) %>" class="additional-images" alt="Main Project Photo" data-toggle="modal" data-target="#myModal">
     </div>
   <% end %>
 
@@ -72,7 +72,7 @@
     <div class="modal-container">
       <div class="modal-image">
         <%= image_tag "back.png", id:"left-trigger" %>
-        <%= cl_image_tag @project.photos.first.url, :id=>"modal-image"%>
+        <%= cl_image_tag(@project.photos.first.url, :format => :webp, :quality => :auto, :id=>"modal-image")%>
         <%= image_tag "next.png", id:"right-trigger" %>
       </div>
     </div>

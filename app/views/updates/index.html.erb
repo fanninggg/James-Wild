@@ -14,7 +14,7 @@
               <a class="update-link" href="<%= update.url %>"><%= update.link %></a>
             <% end %>
           </div>
-          <div class="update-image" style="background-image: url(<%= update.photo? ? cl_image_path(update.photo.url, quality: "auto:low") : image_path("Logo.jpg") %>);"></div>
+          <div class="update-image" style="background-image: url(<%= update.photo? ? cl_image_path(update.photo.url,:quality=>"auto_low", :fetch_format=>:webp) : image_path("Logo.jpg") %>);"></div>
           <% if current_user %>
           <div class="edit-delete-links">
             <%= link_to edit_update_path(update) do %>
