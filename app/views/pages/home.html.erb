@@ -31,7 +31,7 @@
           <% @projects.each do |project| %>
             <div class="col-xs-12 col-sm-6 col-md-4">
               <%= link_to project_path(project) do %>
-                <div class="latest-work-card" style="background-image: url(<%= project.photos.empty? ? image_path("bronze_background.png") : cl_image_path(project.photos.first.url.url, :quality=>"auto")%>);">
+                <div class="latest-work-card" style="background-image: url(<%= project.photos.empty? ? image_path("bronze_background.png") : cl_image_path(project.photos.first.url, :format => :webp, :quality => :auto)%>);">
                   <div class="linear-gradient-hover">
                   </div>
                 </div>

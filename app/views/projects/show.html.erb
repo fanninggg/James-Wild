@@ -9,7 +9,7 @@
     <% end %>
   </div>
   <% if @project.photos.length > 0 %>
-    <div class="show-images" data-images='<%= @project.photos.reverse.map { |p| cl_image_path( p.url.url, :format => :webp, :quality => :auto) } %>' id="image-access">
+    <div class="show-images" data-images='<%= @project.photos.reverse.map { |p| cl_image_path( p.url, :format => :webp, :quality => :auto) } %>' id="image-access">
       <div class="main-image text-center">
         <% if user_signed_in? && @project.photos.length > 0 %>
           <%= link_to photo_path(id:@project.photos[0], project:@project), :method => :delete do %>
