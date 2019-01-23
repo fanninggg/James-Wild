@@ -1,7 +1,9 @@
 <div class="about-container">
   <div class="hide-video">
     <div class="player" >
-      <%= video_tag "https://s3.eu-west-2.amazonaws.com/hoxtondigitalpublicassets/JamesWild/james_wild_sculptures-hd_1920x1080.mp4", class: "player__video-about viewer", id: "video_home", loop: true, autoplay: true, muted: true%>
+      <video class="player__video-about viewer" id="video_home" loop="true" autoplay muted>
+        <source id="video-source" data-src="https://s3.eu-west-2.amazonaws.com/hoxtondigitalpublicassets/JamesWild/james_wild_sculptures-hd_1920x1080.mp4" type="video/mp4">
+      </video>
       <div class="video-logo-holder">
         <div class="volume-toggle">
           <%= image_tag "volume_on.png", class:"volume-logo hidden", id: "volume_on" %>
@@ -42,6 +44,12 @@
   const video = document.getElementById("video_home");
   const volumeOn = document.getElementById("volume_on");
   const volumeOff = document.getElementById("volume_off");
+  const width = window.screen.width
+  const vid = document.getElementById("video_home");
+  const src = document.getElementById("video-source").getAttribute('data-src')
+  if (width > 900) {
+    vid.setAttribute('src', src)
+  }
 
   volumeOff.addEventListener('click', function() {
     volumeOn.classList.toggle("hidden");
