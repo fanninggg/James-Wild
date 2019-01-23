@@ -1,7 +1,10 @@
 <div class="home-container">
   <div class="home-video">
     <div class="player">
-      <%= video_tag "https://s3.eu-west-2.amazonaws.com/hoxtondigitalpublicassets/JamesWild/Origwolves_of_scotland_1280x676.mp4", class: "player__video viewer", id: "video_home", loop: true, autoplay: true, muted: true %>
+
+      <video class="player__video viewer" id="video_home" loop="true" autoplay muted>
+        <source id="video-source" data-src="https://s3.eu-west-2.amazonaws.com/hoxtondigitalpublicassets/JamesWild/Origwolves_of_scotland_1280x676.mp4" type="video/mp4">
+      </video>
       <div class="video-logo-holder">
         <div class="volume-toggle">
           <%= image_tag "volume_on.png", class:"volume-logo hidden", id: "volume_on" %>
@@ -49,6 +52,8 @@
   const video = document.getElementById("video_home");
   const volumeOn = document.getElementById("volume_on");
   const volumeOff = document.getElementById("volume_off");
+  const width = window.screen.width
+  const src = document.getElementById("video-source").getAttribute('data-src')
 
   volumeOff.addEventListener('click', function() {
     volumeOn.classList.toggle("hidden");
@@ -67,6 +72,10 @@
 
   vid.onloadeddata = function() {
     vid.style.opacity = 1
-};
+  };
+  if (width > 900) {
+    vid.setAttribute('src', src)
+  }
+
 </script>
 
