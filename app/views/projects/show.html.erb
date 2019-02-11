@@ -115,11 +115,11 @@
   rightTrigger.addEventListener('click', function() {
     if (currentImage === images.length-1) {
       modalImage.src = images[0]
-      visibleImage = modalImage.src
+      visibleImage = modalImage.src.replace("q_auto", "q_20")
       currentImage = images.indexOf(visibleImage)
     } else {
       modalImage.src = images[currentImage + 1]
-      visibleImage = modalImage.src
+      visibleImage = modalImage.src.replace("q_auto", "q_20")
       currentImage = images.indexOf(visibleImage)
     }
   })
@@ -129,11 +129,11 @@
   leftTrigger.addEventListener('click', function() {
     if (currentImage === 0) {
       modalImage.src = images[images.length-1]
-      visibleImage = modalImage.src
+      visibleImage = modalImage.src.replace("q_auto", "q_20")
       currentImage = images.indexOf(visibleImage)
     } else {
       modalImage.src = images[currentImage - 1]
-      visibleImage = modalImage.src
+      visibleImage = modalImage.src.replace("q_auto", "q_20")
       currentImage = images.indexOf(visibleImage)
     }
   })
