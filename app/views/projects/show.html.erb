@@ -87,7 +87,13 @@
   const rightTrigger = document.getElementById("right-trigger")
   const modalImage = document.getElementById("modal-image")
   let visibleImage = modalImage.src
-  const images = JSON.parse(document.getElementById("image-access").dataset.images)
+  const initialImages = JSON.parse(document.getElementById("image-access").dataset.images)
+  const images = []
+
+  initialImages.forEach(function(image) {
+    images.push(image.replace("q_auto", "q_20"))
+  })
+
   let currentImage = images.indexOf(visibleImage)
 
   modalImage.addEventListener('click', function() {
