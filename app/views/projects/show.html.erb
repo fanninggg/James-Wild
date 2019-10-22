@@ -1,13 +1,13 @@
-<div class="show-container">
-  <div class="show-text">
-    <h3 style="font-size:20px;font-weight: bold;margin-bottom: 20px;text-align:center;"><%= @project.name %></h3>
-    <% if @project.bronze == true %>
-      <p style="text-align:center;"><%= @project.year %> - <%= @project.finish %></p>
-      <p style="text-align:center;"><%= @project.dimensions %> - <%= @project.edition %> - <%= @project.price %></p>
-    <% else %>
-      <p style="text-align:center;"><%= @project.description %> - <%= @project.year %> - <%= @project.finish %></p>
-    <% end %>
+<div class="show-container" style="padding-bottom: 0px;">
+  <div class="main-text">
+    <h3 class="index-header" style="padding-bottom: 20px;"><%= @project.name.capitalize %></h3>
   </div>
+  <% if @project.bronze == true %>
+    <p style="text-align:center; padding-bottom: 20px;"><%= @project.year %> <%= @project.finish.present? ? "-" : "" %> <%= @project.finish %></p>
+    <p style="text-align:center; padding-bottom: 20px;"><%= @project.dimensions %> <%= @project.edition.present? ? "-" : "" %> <%= @project.edition %> <%= @project.price.present? ? "-" : "" %> <%= @project.price %></p>
+  <% else %>
+    <p style="text-align:center; padding-bottom: 20px;"><%= @project.description %> <%= @project.year.present? ? "-" : "" %> <%= @project.year %> <%= @project.finish.present? ? "-" : "" %> <%= @project.finish %></p>
+  <% end %>
   <% if @project.photos.length > 0 %>
     <div class="show-images" data-images='<%= @project.photos.reverse.map { |p| cl_image_path( p.url, :format => :jpeg, :quality => :auto) } %>' id="image-access">
       <div class="main-image text-center">
@@ -44,7 +44,6 @@
     </div>
   <% end %>
 
-
   <% if user_signed_in? %>
     <div class="hey-james">
       <p>Hey James, the below links are only visible to you</p>
@@ -65,6 +64,7 @@
     </div>
   <% end %>
 </div>
+<%= cl_image_tag @project.photo, class: "bronze-image" %>
 
 <% if @project.photos.length > 0 %>
   <div id="myModal" class="modal fade" role="dialog">

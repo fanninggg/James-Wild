@@ -1,23 +1,47 @@
 body {
-  background-color: #F9F9F9;
-  font-family: 'Open Sans', sans-serif;
+  background-color: #FFFFFF;
+  font-family: 'Raleway', 'Open Sans', sans-serif;
   height: 100vh;
 }
 
 a {
-  color: rgba(80,80,80,1);
+  font-family: 'ButlerBold';
+  font-weight: normal;
+  color: $black;
+  font-style: normal;
   font-size: 20px;
   &:hover {
-    color: rgba(80,80,80,1);
+    color: $etch;
   }
 }
 
 p {
+  font-family: "Raleway";
   font-size: 20px;
+  margin: 0px;
+}
+
+h2 {
+  font-family: 'ButlerBold';
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: 4px;
 }
 
 h3 {
-  font-size: 24px;
+  margin: 0px;
+  font-family: 'ButlerBold';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 28px;
+  letter-spacing: 3px;
+}
+
+.letch {
+  color: $letch;
+}
+.etch {
+  color: $etch;
 }
 .mobile-header {
   position: relative;
@@ -30,9 +54,6 @@ h3 {
   color: white;
   font-family: 'Open Sans', sans-serif;
   opacity: 0.5;
-  p {
-    line-height: 8px;
-  }
 }
 
 .player {
@@ -142,16 +163,44 @@ h3 {
   opacity: 0.3;
 }
 
-
 .main-text {
-  padding: 60px 15vw 0px 15vw;
+  display: flex;
+  align-itmes: center;
+  justify-content: center;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  margin-top: 8vw;
+  @media only screen and (min-width: 980px) {
+    margin-top: 6.5vw;
+  }
+  @media only screen and (min-width: 1300px) {
+    margin-top: 5vw;
+  }
+}
+.home-latest-work {
+  margin: 8vw 0;
+  @media only screen and (min-width: 980px) {
+    margin-top: 6.5vw;
+  }
+  @media only screen and (min-width: 1300px) {
+    margin-top: 5vw;
+  }
+}
+.index-header {
+  text-align: center;
 }
 
 .main-content {
-  color: rgba(80,80,80,1);
-  font-weight: lighter;
-  font-family: "Open Sans";
+  text-align: center;
+  color: $black;
+  @media only screen and (min-width: 980px) {
+    max-width: calc(800px + 6.5vw);
+  }
+  @media only screen and (max-width: 1300px) {
+    max-width: calc(800px + 5vw);
+  }
 }
+
 
 .subheader {
   color: rgba(100,100,100,1);
@@ -163,10 +212,6 @@ h3 {
   justify-content: space-around;
 }
 
-.vertical-margin {
-  margin: 5vh 0;
-}
-
 .latest-work-card {
   background-size: cover;
   background-repeat: no-repeat;
@@ -174,7 +219,11 @@ h3 {
   position: relative;
   transition: transform .5s;
   margin-bottom: 20px;
-
+  filter: grayscale(70%);
+  &:hover {
+    filter: grayscale(0%);
+    transition: filter 0.5s;
+  }
 }
 
 .latest-work-type {
@@ -191,8 +240,10 @@ h3 {
   position: absolute;
   bottom: 10px;
   left: 20px;
-  color: #fff;
+  color: $black;
   font-size: 0;
+  opacity: 0;
+  font-family: 'ButlerBold';
   // transition: font-size .5s;
 }
 
@@ -202,6 +253,9 @@ h3 {
 
 .latest-work-card:hover .latest-work-title {
   font-size: 24px;
+  opacity: 0.7;
+  transition: font-size 0.5s;
+  transition: opacity 0.5s;
 }
 
 .linear-gradient-hover {
@@ -215,7 +269,9 @@ h3 {
   background-size: cover;
   background-position: 50% 53.5%;
 }
-
+.pb {
+  padding-bottom: 15px;
+}
 
 .latest-work-card:hover .linear-gradient-hover {
   background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,0.2));
@@ -229,6 +285,7 @@ h3 {
   .latest-work-card {
     &:hover {
       transform: scale(1.1);
+      transition: transform 0.5s;
     }
   }
 }
@@ -247,7 +304,7 @@ h3 {
 @media only screen and (max-width: 900px) {
 
   h3 {
-    font-size: 19px;
+    font-size: 23px;
   }
   .volume-logo {
     height: 15px;
@@ -295,7 +352,9 @@ h3 {
 
 @media only screen and (max-width: 600px) {
 
-
+  h3 {
+    font-size: 19px;
+  }
   p {
     font-size: 14px;
   }

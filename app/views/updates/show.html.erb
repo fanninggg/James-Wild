@@ -1,0 +1,45 @@
+<style>
+  .blogbg {
+    width: 100%;
+    position: relative;
+  }
+  .blogbg::after {
+    content: "";
+    background: url(<%= asset_path(@bg) %>);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+</style>
+
+
+<div class="blogbg">
+  <div class="container" style="padding: 3vh 5vw;">
+    <div class="main-text">
+      <h3 class="index-header mb40"><%= @update.title %></h3>
+    </div>
+    <p class="pb etch"><strong>Posted: <%= @update.created_at.strftime("%d/%m/%Y") %></strong></p>
+    <%= cl_image_tag @update.photo, class: "bronze-image" %>
+    <div class="dcen">
+      <div style="margin-top: 50px;">
+        <p class="text-center pb" style="width: 100%;text-align: justify;"><%= @update.description%></p>
+      </div>
+    </div>
+    <% if @update.link.present? %>
+      <div>
+        <a href="<%= @update.url %>"><%= @update.link %></a>
+      </div>
+    <% end %>
+    <% if current_user %>
+      <%= link_to "EDIT", edit_update_path(@update) %>
+      <%= link_to "DELETE", update_path(@update), method: :delete %>
+    <% end %>
+  </div>
+</div>
+

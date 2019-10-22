@@ -7,7 +7,9 @@
     margin-bottom: 6px;
   }
 }
-
+.bronze-image {
+  width: 100%;
+}
 #close-modal {
   position: absolute;
   top: 40px;
@@ -117,9 +119,6 @@
 }
 
 @media only screen and (max-width: 900px) {
-  .main-text {
-    padding-top: 40px;
-  }
   .mobile-header {
     display: block;
   }

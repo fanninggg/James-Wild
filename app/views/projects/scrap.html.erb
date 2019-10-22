@@ -1,16 +1,1 @@
-<h3 class="index-header">SCRAP SCULPTURE</h3>
-<div class="about-text">
-  <p class="text-center main-content">Scrap metal is James’ chosen medium, it is wonderfully expressive and diverse and encourages countless creative routes.<br/>Resourcefulness is central to James’ work, so much so that nothing is wasted, even the dust is swept off the floor and used in rusted paint finishes. Favoured scrap metal sources include farm yards, blacksmiths, mechanics, scrap heaps and even the odd discarded scaffolding bracket found on the street.<br/>James has completed numerous one-off commissions and continues to work closely with private and public clients to achieve distinct works of art.</p>
-</div>
-<div class="circle-holder">
-  <img class="scrap-circles" src="<%= image_path('scrap-circles.png') %>" alt="Study > Collect > Construct > Protect">
-</div>
-<div class="container card-holder">
-  <div class="row">
-    <% @projects.each do |project| %>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <%= render "shared/card", project: project %>
-      </div>
-    <% end %>
-  </div>
-</div>
+<%= render "shared/page", para1: "Scrap metal is James’ chosen medium, it is wonderfully expressive and diverse and encourages countless creative routes.", para2: "Resourcefulness is central to James’ work, so much so that nothing is wasted, even the dust is swept off the floor and used in rusted paint finishes. Favoured scrap metal sources include farm yards, blacksmiths, mechanics, scrap heaps and even the odd discarded scaffolding bracket found on the street.", para3: "James has completed numerous one-off commissions and continues to work closely with private and public clients to achieve distinct works of art.", para3: "", title1: "SCRAP SCULPTURE", title2: nil, type: "scrap" %>

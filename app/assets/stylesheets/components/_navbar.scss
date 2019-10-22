@@ -1,5 +1,5 @@
 .navbar-JW {
-  background: white;
+  background: $letch;
   transition: all 0.3s ease;
   // height: 8vh;
   padding: 0px 20px;
@@ -44,37 +44,32 @@
 }
 .active-link {
   height: 40px;
-  border-bottom: 4px solid #505050;
+  a {
+    color: $etch;
+  }
+  border-bottom: 4px solid $etch;
 }
 .no-margin {
   margin: 0;
 }
 
 .jw-logo {
-  height: 7vh;
-  width: 7vh;
-  min-height:70px;
-  min-width: 70px;
-  border-radius: 50%;
-}
-
-.mobile-jw-logo {
-  height: 60px;
-  width: 60px;
-  border-radius: 50%;
+  width: 16vw;
+  min-width: 160px;
+  max-width: 350px;
 }
 
 .navbar-link {
-  color: #505050;
+  color: $black;
   font-size: 20px;
   &:hover {
     text-decoration: none;
-    color: black;
+    color: $etch;
     font-weight: 600;
   }
   &:focus {
     text-decoration: none;
-    color: black;
+    color: $etch;
     font-weight: 600;
   }
 }
@@ -108,6 +103,7 @@
 
 .mobile-navbar-left {
   display: flex;
+  padding-left: 5vw;
   justify-content: space-between;
   align-items: center;
   float: left !important;

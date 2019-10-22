@@ -9,11 +9,48 @@
   align-items: center;
   color: rgba(80,80,80,1);
 }
-
+.mb40 {
+  margin-bottom: 40px;
+}
+.update {
+  filter: grayscale(0%);
+  &:hover {
+    .small {
+      opacity: 1;
+      color: $black;
+    }
+    transform: scale(1) !important;
+    filter: grayscale(70%) !important;
+  }
+}
 .email-label::placeholder {
   font-family: "Open Sans";
 }
-
+.download {
+  padding: 10px;
+  background-color: $etch;
+  border-radius: 4px;
+  color: $black;
+  text-align: center;
+  margin: 0 auto;
+  width: 210px;
+  &:hover {
+    color: $etch;
+    text-decoration: none !important;
+    background-color: $black;
+  }
+  &:focus {
+    color: $etch;
+    text-decoration: none !important;
+    background-color: $black;
+  }
+}
+.mt20 {
+  margin-top: 20px;
+}
+.black {
+  color: $black;
+}
 .email-label {
   font-family: "Open Sans";
 }

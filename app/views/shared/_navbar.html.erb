@@ -2,17 +2,11 @@
 <div class="navbar-JW">
   <div class="navbar-left">
     <%= link_to "/" do %>
-      <%= image_tag "Logo.jpg", class:"jw-logo" %>
+      <%= image_tag "OW-logo.png", class: "jw-logo" %>
     <% end %>
-    <div class="navbar-name">
-      <%= link_to "/", class:"nodec" do %>
-        <p class="no-margin logo-text">JAMES WILD</p>
-        <p class="no-margin logo-text offset">SCULPTURES</p>
-      <% end %>
-    </div>
     <% if user_signed_in? %>
       <%= link_to destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link-dark" do %>
-        <i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
+        <i class="fas fa-sign-out-alt" style="margin-left: 20px;"></i>
       <% end %>
     <% end %>
   </div>
@@ -77,18 +71,21 @@
 <div class="mobile-nav">
   <div class="mobile-navbar-left">
     <%= link_to "/" do %>
-      <%= image_tag "Logo.jpg", class:"mobile-jw-logo" %>
+      <%= image_tag "OW-logo.png", class: "jw-logo" %>
     <% end %>
-    <div class="navbar-name">
-      <p class="no-margin mobile-logo-text">JAMES WILD</p>
-      <p class="left-margin mobile-logo-text">SCULPTURES</p>
-    </div>
+    <% if user_signed_in? %>
+      <%= link_to destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link-dark" do %>
+        <i class="fas fa-sign-out-alt" style="margin-left: 20px;"></i>
+      <% end %>
+    <% end %>
   </div>
   <div class="mobile-navbar-right">
     <div class="dropdown">
       <img style="height: 30px; width: 30px; margin-right: 10px;" src="<%= image_path('menu.png') %>" alt="Hamburger" id="dropdownMenuButton">
       <div class="drop-menu" id="drop-menu">
-        <%= link_to "SCRAP", scrap_path, class:"vert-margin navbar-link"%>
+        <%= link_to scrap_path, class:"vert-margin navbar-link" do %>
+          <strong>SCRAP</strong>
+        <% end %>
         <%= link_to "BRONZE", bronze_path, class:"vert-margin navbar-link"%>
         <%= link_to "ABOUT", about_path, class:"vert-margin navbar-link"%>
         <%= link_to "NEWS", news_path, class:"vert-margin navbar-link"%>

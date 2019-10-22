@@ -20,7 +20,7 @@
         <%= f.text_field :edition, class:"form-control" %>
         <%= f.label :price, 'Project price', class:"form-control-label" %>
         <%= f.text_field :price, class:"form-control" %>
-
+        <%= f.file_field :photo %>
         <br>
         <%= f.label :photos, 'Project Photos', class:"form-control-label" %>
         <%= f.fields_for :photos do |photo| %>

@@ -2,8 +2,13 @@ class UpdatesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :find_update, only: [:show, :edit, :update, :destroy]
 
+  def show
+    @bg = random_etch
+  end
+
   def index
     @updates = Update.last(10).reverse
+    @bg = random_etch
   end
 
   def new
@@ -46,6 +51,11 @@ class UpdatesController < ApplicationController
   end
 
   private
+
+  def random_etch
+    etchs = ["Duck-etching","Elephant-etching","Lioness-etching","Orangatun","Wolf-etching","Shark-5"]
+    (etchs.sample + ".png").strip
+  end
 
   def find_update
     @update = Update.find(params[:id])
