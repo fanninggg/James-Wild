@@ -1,5 +1,7 @@
 <div class="show-container">
+  <% if @project.bronze == true %>
   <h3 class="index-header" style="font-family: 'ButlerSemiBold';letter-spacing: unset;"><%= @project.name.upcase %></h3>
+  <% end %>
   <h3 class="index-header" style="padding-bottom: 20px;letter-spacing: unset;font-size: 4rem;"><%= @project.sub %></h3>
   <% if @project.bronze == true %>
     <p style="text-align:center; padding-bottom: 20px;font-family: 'ButlerSemiBold'"><%= @project&.year %><span class="etch"> | </span><i>Edition of <%= @project&.edition %></i><span class="etch"> | </span><i><%= @project&.dimensions %></i><span class="etch"> | </span><i><%= @project&.price %></i></p>
