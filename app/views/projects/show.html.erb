@@ -1,6 +1,6 @@
 <div class="show-container" style="padding-bottom: 0px;">
   <div class="main-text">
-    <h3 class="index-header" style="padding-bottom: 20px;"><%= @project.name.capitalize %></h3>
+    <h3 class="index-header" style="padding-bottom: 20px;"><%= @project.name.upcase %></h3>
   </div>
   <% if @project.bronze == true %>
     <p style="text-align:center; padding-bottom: 20px;"><%= @project.year %> <%= @project.finish.present? ? "-" : "" %> <%= @project.finish %></p>
