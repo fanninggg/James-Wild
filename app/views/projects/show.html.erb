@@ -2,10 +2,12 @@
   <h3 class="index-header" style="font-family: 'ButlerSemiBold';letter-spacing: unset;"><%= @project.name.upcase %></h3>
   <h3 class="index-header" style="padding-bottom: 20px;letter-spacing: unset;font-size: 4rem;"><%= @project.sub %></h3>
   <% if @project.bronze == true %>
-    <p style="text-align:center; padding-bottom: 20px;"><%= @project.year %> <%= @project.finish.present? ? "|" : "" %> <%= @project.finish %></p>
-    <p style="text-align:center; padding-bottom: 20px;"><%= @project.dimensions %><%= @project.edition.present? ? " | Edition of #{@project.edition}" : "" %><%= @project.price.present? ? " | #{@project.price}" : "" %></p>
+    <p style="text-align:center; padding-bottom: 20px;font-family: 'ButlerSemiBold'"><%= @project&.year %><span class="etch"> | </span><i>Edition of <%= @project&.edition %></i><span class="etch"> | </span><i><%= @project&.dimensions %></i><span class="etch"> | </span><i><%= @project&.price %></i></p>
+    <p style="text-align:center; padding-bottom: 20px;"></p>
   <% else %>
-    <p style="text-align:center; padding-bottom: 20px;"><%= @project.description %><%= @project.year.present? ? " | #{@project.year}" : "" %><%= @project.finish.present? ? " | #{@project.finish}" : "" %> </p>
+    <p style="text-align:center; padding-bottom: 20px;font-family: 'ButlerSemiBold'">
+      <%= @project&.description %><span class="etch"> | </span><i><%= @project&.year %></i><span class="etch"> | </span><i><%= @project&.finish %></i></p>
+    </p>
   <% end %>
   <% if @project.photos.length > 0 %>
     <div class="show-images" data-images='<%= @project.photos.reverse.map { |p| cl_image_path( p.url, :format => :jpeg, :quality => :auto) } %>' id="image-access">
