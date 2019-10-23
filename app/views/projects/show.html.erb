@@ -39,7 +39,7 @@
   <% end %>
 
 
-  <% @project.photos.each do |photo| %>
+  <% @project.photos.order(created_at: :desc).each do |photo| %>
     <div class="mobile-image">
       <img src="<%= cl_image_path(photo.url, :format => :jpeg, :quality => 20) %>" class="additional-images" alt="Main Project Photo" data-toggle="modal" data-target="#myModal">
     </div>
