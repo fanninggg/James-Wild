@@ -56,14 +56,6 @@
         <%= link_to "CONTACT", new_contact_path, class:"no-margin navbar-link"%>
       </div>
     <% end %>
-    <% if current_user %>
-      <div class="inactive-link mailing-list-link">
-        <%= link_to "MAILING LIST", contacts_path, class:"no-margin navbar-link"%>
-        <% if unanswered.length > 0 %>
-          <div class="mailing-list-counter"><%= unanswered.length %></div>
-        <% end %>
-      </div>
-    <% end %>
   </div>
 </div>
 
