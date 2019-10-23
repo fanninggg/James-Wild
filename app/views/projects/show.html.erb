@@ -17,7 +17,7 @@
             <p>&times;</p>
           <% end %>
         <% end %>
-        <img src="<%= cl_image_path(@project.photos.order(created_at: :desc).first.url, :format => :jpeg, :quality => 20) %>" alt="" id="main-image" class="new-image" data-toggle="modal" data-target="#myModal">
+        <img src="<%= cl_image_path(@project.photos.order(created_at: :desc).first.url, :format => :jpeg) %>" alt="" id="main-image" class="new-image" data-toggle="modal" data-target="#myModal">
       </div>
       <div class="other-images">
         <div class="container text-center" style="width:100%">
