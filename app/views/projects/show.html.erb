@@ -1,8 +1,6 @@
-<div class="show-container" style="padding-bottom: 0px;">
-  <div class="main-text">
-    <h3 class="index-header" style="padding-bottom: 20px;font-family: 'ButlerSemiBold"><%= @project.name.upcase %></h3>
-  </div>
-  <h3 class="index-header" style="padding-bottom: 20px;"><%= @project.sub %></h3>
+<div class="show-container">
+  <h3 class="index-header" style="font-family: 'ButlerSemiBold';letter-spacing: unset;"><%= @project.name.upcase %></h3>
+  <h3 class="index-header" style="padding-bottom: 20px;letter-spacing: unset;font-size: 4rem;"><%= @project.sub %></h3>
   <% if @project.bronze == true %>
     <p style="text-align:center; padding-bottom: 20px;"><%= @project.year %> <%= @project.finish.present? ? "|" : "" %> <%= @project.finish %></p>
     <p style="text-align:center; padding-bottom: 20px;"><%= @project.dimensions %><%= @project.edition.present? ? " | Edition of #{@project.edition}" : "" %><%= @project.price.present? ? " | #{@project.price}" : "" %></p>
