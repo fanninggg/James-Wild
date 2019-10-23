@@ -4,9 +4,9 @@
   </div>
   <% if @project.bronze == true %>
     <p style="text-align:center; padding-bottom: 20px;"><%= @project.year %> <%= @project.finish.present? ? "-" : "" %> <%= @project.finish %></p>
-    <p style="text-align:center; padding-bottom: 20px;"><%= @project.dimensions %> <%= @project.edition.present? ? "-" : "" %> <%= @project.edition %> <%= @project.price.present? ? "-" : "" %> <%= @project.price %></p>
+    <p style="text-align:center; padding-bottom: 20px;"><%= @project.dimensions %><%= @project.edition.present? ? " - Edition #{@project.edition}" : "" %><%= @project.price.present? ? " - #{@project.price}" : "" %></p>
   <% else %>
-    <p style="text-align:center; padding-bottom: 20px;"><%= @project.description %> <%= @project.year.present? ? "-" : "" %> <%= @project.year %> <%= @project.finish.present? ? "-" : "" %> <%= @project.finish %></p>
+    <p style="text-align:center; padding-bottom: 20px;"><%= @project.description %><%= @project.year.present? ? " - #{@project.year}" : "" %><%= @project.finish.present? ? " - #{@project.finish}" : "" %> </p>
   <% end %>
   <% if @project.photos.length > 0 %>
     <div class="show-images" data-images='<%= @project.photos.reverse.map { |p| cl_image_path( p.url, :format => :jpeg, :quality => :auto) } %>' id="image-access">
