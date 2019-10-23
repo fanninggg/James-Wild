@@ -22,25 +22,27 @@
       <p>Scottish Highlands</p>
     </div>
   </div>
-  <div class="main-text">
-    <p class="text-center main-content">Inspired by the form and movement of nature, <i>James Wild</i> focuses on capturing the essence of the wild through sculpture. <br><br>His ambition is to build awareness and appreciation for the wild parts of our planet and the life that inhabits them. Conservation and a love for working from life was the catalyst on which James started sculpting in 2009 and since then he has completed both private and public works of art in the UK and Overseas.</p>
-  </div>
-  <div class="main-text">
-    <h3 class="index-header">LATEST WORK</h3>
-  </div>
+  <div class="bg w">
+    <div class="main-text">
+      <p class="text-center main-content">Inspired by the form and movement of nature, <i>James Wild</i> focuses on capturing the essence of the wild through sculpture. <br><br>His ambition is to build awareness and appreciation for the wild parts of our planet and the life that inhabits them. Conservation and a love for working from life was the catalyst on which James started sculpting in 2009 and since then he has completed both private and public works of art in the UK and Overseas.</p>
+    </div>
+    <div class="main-text">
+      <h3 class="index-header">LATEST WORK</h3>
+    </div>
 
-  <div class="home-latest-work">
-    <div class="container">
-      <div class="row">
-        <% @projects.each do |project| %>
-          <%= link_to project_path(project) do %>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="latest-work-card" style="background-image: url(<%= project.photos.empty? ? image_path("James-wolf.png") : cl_image_path(project.photos.first.url, :format => :jpeg, :quality => 10, :width => 300)%>);">
-                <div class="latest-work-title"><%= project.name.split.map(&:capitalize).join(" ") %></div>
+    <div class="home-latest-work">
+      <div class="container">
+        <div class="row">
+          <% @projects.each do |project| %>
+            <%= link_to project_path(project) do %>
+              <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="latest-work-card" style="background-image: url(<%= project.photos.empty? ? image_path("James-wolf.png") : cl_image_path(project.photos.first.url, :format => :jpeg, :quality => 10, :width => 300)%>);">
+                  <div class="latest-work-title"><%= project.name.split.map(&:capitalize).join(" ") %></div>
+                </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>

@@ -1,38 +1,42 @@
-<div class="main-text">
-  <h3 class="index-header" style="letter-spacing: 8px;">ONE WILD</h3>
-</div>
-<div class="dcen">
-  <div class="about-text" style="margin-top: 50px;">
-    <p class="text-center main-content pb">I am incredibly excited and proud to be presenting my collection of bronze sculpture at my first major exhibition, <span style="letter-spacing: 8px;">ONEWILD</span>. The exhibition showcases a range of vulnerable and critically endangered species sculpted from the untameable medium of scrap metal and then cast in bronze.</p>
-    <p class="text-center main-content pb">I started sculpting in 2009 and in the last 10 years a lot has changed, not least the amount we know about man’s impact on planet earth. I, like many others, have always been drawn to the wild stretches of the planet, both on a personal level as well as a creative one. The idea that these beautiful and pure sites around the world and the creatures that inhabit them are threatened to the point of extinction is a horrific prospect.</p>
-    <p class="text-center main-content pb">This was the inception point of <span style="letter-spacing: 8px;">ONEWILD</span>, an exhibition of sculpture that captures the essence of these wild places, tells the story of the animals and habitats today, the work the is being done to prevent extinction and completing the circle with 20% of each sculpture sold going to a relevant conservation project.</p>
-    <div class="main-content mb40">
-      <%= image_tag "ffi.jpg", alt: "FFI logo", class: "logos" %>
-      <%= image_tag "arbo.jpg", alt: "FFI logo", class: "logos" %>
-    </div>
-    <p class="text-center main-content pb">Fauna and Flora international (FFI) is the world’s oldest international wildlife conservation organisation. Its focus is on protecting biodiversity, which underpins the healthy ecosystems that are critical for the life-support systems that humans and all other species rely on.</p>
-    <p class="text-center main-content pb">I am immensely proud that <span style="letter-spacing: 8px;">ONEWILD</span> is in aid of the pioneering work of FFI and to be working with them to tell the stories of these animals and the habitats in which they live.</p>
-    <p class="text-center main-content pb">My creative ambition for my sculpture is for it to act as a portal to reconnect and consider the wild. In a world where people grow further away from the nature, I want my work to tell a story of a moment and story in the wild. An amalgamation of waste metal worked into a raw, natural lifeforce with a personality and spirit.</p>
-    <p class="text-center main-content pb">My recognisable style comes through a tolerance and ability for making mistakes, every sculpture contains thousands of them. Every sculpture wears the scars from the punch of hammers, the cuts from grinders and the searing temperatures from the welder. Scrap metal is a wonderfully diverse medium and I’ve always loved the contrast of seeing everyday waste scrap that is built up and worked into a a pure, characterful wild animal.</p>
-    <p class="text-center main-content pb"><strong><i>“The greatest threat to our planet is the belief that someone else will save it” Robert Swan OBE</i></strong></p>
-    <p class="text-center main-content pb">FFI’s charity number (1011102)</p>
+<div class="bg e">
+  <div class="main-text" style="margin-top: 0px">
+    <h3 class="index-header" style="letter-spacing: 8px;">ONEWILD</h3>
   </div>
-</div>
-<div class="circle-holder">
-  <img class="circles" src="<%= image_path('bronze-circles.png') %>" alt="Study > Collect > Construct > Cast > Patinate">
-</div>
-<div class="home-latest-work">
-  <div class="container">
-    <div class="row">
-      <% @projects.each do |project| %>
-        <%= link_to project_path(project) do %>
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="latest-work-card" style="background-image: url(<%= project.photos.empty? ? image_path("James-wolf.png") : cl_image_path(project.photos.first.url, :format => :jpeg, :quality => 10, :width => 300)%>);">
-              <div class="latest-work-title"><%= project.name.split.map(&:capitalize).join(" ") %></div>
+  <div class="main-text" style="margin-top: 2.5vw;">
+    <a href="#sculptures" class="down"><i class="fas fa-arrow-down"></i></a>
+  </div>
+  <div class="dcen">
+    <div class="about-text" style="margin-top: 2.5vw;">
+      <p class="text-center main-content pb">I am incredibly excited and proud to be presenting my collection of bronze sculpture at my first major exhibition, <span style="letter-spacing: 8px;">ONEWILD</span>. The exhibition showcases a range of vulnerable and critically endangered species sculpted from the untameable medium of scrap metal and then cast in bronze.</p>
+      <p class="text-center main-content pb">I started sculpting in 2009 and in the last 10 years a lot has changed, not least the amount we know about man’s impact on planet earth. I, like many others, have always been drawn to the wild stretches of the planet, both on a personal level as well as a creative one. The idea that these beautiful and pure sites around the world and the creatures that inhabit them are threatened to the point of extinction is a horrific prospect.</p>
+      <div class="main-content mb40" style="margin-top: 40px;">
+        <%= image_tag "onewild.png", alt: "FFI logo", class: "logos" %>
+      </div>
+      <p class="text-center main-content pb">This was the inception point of <span style="letter-spacing: 8px;">ONEWILD</span>, an exhibition of sculpture that captures the essence of these wild places, tells the story of the animals and habitats today, the work the is being done to prevent extinction and completing the circle with <strong>20% of each sculpture sold going Fauna and Flora International.</strong> Charity number (1011102). Fauna and Flora International is the world’s oldest international wildlife conservation organisation. Its focus is on protecting biodiversity, which underpins the healthy ecosystems that are critical for the life-support systems that humans and all other species rely on. I am immensely proud that <span style="letter-spacing: 8px;">ONEWILD</span> is in aid of the pioneering work of Fauna and Flora International and to be working with them to tell the stories of these animals and the habitats in which they live.</p>
+      <p class="text-center main-content pb">My creative ambition for my sculpture is for it to act as a portal to reconnect and consider the wild. In a world where people grow further away from the nature, I want my work to tell a story of a moment and story in the wild. An amalgamation of waste metal worked into a raw, natural lifeforce with a personality and spirit. My recognisable style comes through a tolerance and ability for making mistakes, every sculpture contains thousands of them. Every sculpture wears the scars from the punch of hammers, the cuts from grinders and the searing temperatures from the welder. Scrap metal is a wonderfully diverse medium and I’ve always loved the contrast of seeing everyday waste scrap that is built up and worked into a a pure, characterful wild animal.</p>
+      <p class="text-center main-content pb"><strong><i>“The greatest threat to our planet is the belief that someone else will save it” Robert Swan OBE</i></strong></p>
+    </div>
+  </div>
+  <div class="circle-holder">
+    <img class="circles" src="<%= image_path('bronze-circles.png') %>" alt="Study > Collect > Construct > Cast > Patinate">
+  </div>
+  <div id="sculptures" style="height: 5vw; width: 100%;"></div>
+  <div class="main-text" style="margin-top: 0px;">
+    <h3  class="index-header" style="letter-spacing: 8px;">SCULPTURES</h3>
+  </div>
+  <div class="home-latest-work">
+    <div class="container">
+      <div class="row">
+        <% @projects.each do |project| %>
+          <%= link_to project_path(project) do %>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="latest-work-card" style="background-image: url(<%= project.photos.empty? ? image_path("James-wolf.png") : cl_image_path(project.photos.first.url, :format => :jpeg, :quality => 10, :width => 300)%>);">
+                <div class="latest-work-title"><%= project.name.split.map(&:capitalize).join(" ") %></div>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>

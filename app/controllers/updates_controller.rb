@@ -53,8 +53,8 @@ class UpdatesController < ApplicationController
   private
 
   def random_etch
-    etchs = ["Duck-etching","Elephant-etching","Lioness-etching","Orangatun","Wolf-etching","Shark-5"]
-    (etchs.sample + ".png").strip
+    etchs = ["e.png","w.png","ws.jpg","l.jpg"]
+    etchs.sample
   end
 
   def find_update

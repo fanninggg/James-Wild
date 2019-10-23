@@ -4,6 +4,10 @@ body {
   height: 100vh;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   font-family: 'ButlerBold';
   font-weight: normal;
@@ -36,7 +40,46 @@ h3 {
   font-size: 28px;
   letter-spacing: 3px;
 }
+.bg {
+  width: 100%;
+  min-height: calc(100vh - 160px);
+  position: relative;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 5vw 0;
+  background-position: right;
+}
+.e {
+  background-image: url("e.png");
+}
+.w {
+  background-image: url("w.png");
+}
+.ws {
+  background-image: url("ws.jpg");
+}
+.l {
+  background-image: url("l.jpg");
+}
 
+.down {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid $etch;
+  color: $etch;
+  text-decoration: none;
+  &:hover {
+    color: $letch;
+    border: 2px solid $letch;
+    text-decoration: none;
+  }
+}
 .letch {
   color: $letch;
 }
@@ -65,8 +108,7 @@ h3 {
   position: relative;
 }
 .logos {
-  width: 46%;
-  padding: 2%;
+  width: 100%;
 }
 .player__video {
   background-color: transparent;
@@ -181,7 +223,7 @@ h3 {
   }
 }
 .home-latest-work {
-  margin: 8vw 0;
+  margin-top: 8vw;
   @media only screen and (min-width: 980px) {
     margin-top: 6.5vw;
   }

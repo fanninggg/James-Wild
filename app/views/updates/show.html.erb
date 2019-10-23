@@ -1,27 +1,6 @@
-<style>
-  .blogbg {
-    width: 100%;
-    position: relative;
-  }
-  .blogbg::after {
-    content: "";
-    background: url(<%= asset_path(@bg) %>);
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0.2;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
-  }
-</style>
-
-
-<div class="blogbg">
-  <div class="container" style="padding: 3vh 5vw;">
-    <div class="main-text">
+<div class="bg" style="background-image: url(<%= asset_path(@bg) %>);">
+  <div class="container"  style="padding: 0 5vw;">
+    <div class="main-text" style="margin-top: 0px;">
       <h3 class="index-header mb40"><%= @update.title %></h3>
     </div>
     <p class="pb etch"><strong>Posted: <%= @update.created_at.strftime("%d/%m/%Y") %></strong></p>
