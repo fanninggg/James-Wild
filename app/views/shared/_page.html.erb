@@ -26,7 +26,7 @@
         <%= link_to project_path(project) do %>
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="latest-work-card" style="background-image: url(<%= project.photos.empty? ? image_path("James-wolf.png") : cl_image_path(project.photos.order(created_at: :desc).first.url, :format => :jpeg, :quality => 40, :width => 300)%>);">
-              <div class="latest-work-title"><%= project.sub&.split&.map(&:capitalize)&.join(" ") %></div>
+              <div class="latest-work-title"><%= project.name&.split&.map(&:capitalize)&.join(" ") %></div>
             </div>
           </div>
         <% end %>
