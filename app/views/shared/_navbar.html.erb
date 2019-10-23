@@ -1,8 +1,8 @@
 <% unanswered = Contact.where(sent: false) %>
 <div class="navbar-JW">
   <div class="navbar-left">
-    <%= link_to "/" do %>
-      <h3 style="letter-spacing: 8px;">JAMES WILD</h3>
+    <%= link_to "/", class: "log-a" do %>
+      <h3 class="logo-link">JAMES WILD</h3>
     <% end %>
     <% if user_signed_in? %>
       <%= link_to destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link-dark" do %>
@@ -70,8 +70,8 @@
 
 <div class="mobile-nav">
   <div class="mobile-navbar-left">
-    <%= link_to "/" do %>
-      <h3 style="letter-spacing: 8px;">JAMES WILD</h3>
+    <%= link_to "/", class: "log-a" do %>
+      <h3 class="logo-link">JAMES WILD</h3>
     <% end %>
     <% if user_signed_in? %>
       <%= link_to destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link-dark" do %>

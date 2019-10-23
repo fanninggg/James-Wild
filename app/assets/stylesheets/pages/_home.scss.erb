@@ -222,13 +222,26 @@ h3 {
   position: relative;
   transition: transform .5s;
   margin-bottom: 20px;
-  filter: grayscale(70%);
+  filter: saturate(100%);
   &:hover {
-    filter: grayscale(0%);
+    filter: saturate(50%);
     transition: filter 0.5s;
   }
 }
-
+.log-a {
+  text-decoration: none !important;
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+.logo-link {
+  letter-spacing: 8px;
+  text-decoration: none !important;
+  &:hover {
+    text-decoration: none !important;
+    color: $black !important;
+  }
+}
 .latest-work-type {
   position: absolute;
   top: 10px;
