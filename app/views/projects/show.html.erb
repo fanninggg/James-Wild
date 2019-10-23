@@ -23,9 +23,9 @@
       </div>
       <div class="other-images">
         <div class="container text-center" style="width:100%">
-          <div class="row">
+          <div class="frow">
             <% @project.photos.order(created_at: :desc)[1..-1].each do |photo| %>
-              <div class="col-xs-3 image-card">
+              <div class="image-card">
                 <% if user_signed_in? %>
                   <%= link_to photo_path(id:photo, project:@project), :method => :delete do %>
                     <p>&times;</p>

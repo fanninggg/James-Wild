@@ -19,6 +19,11 @@
 .show-container {
   padding: 5vh 5vw 6vh 5vw;
 }
+.frow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 .show-text {
   color: rgba(100,100,100,1);
@@ -30,7 +35,7 @@
   // display: flex;
 }
 .image-card {
-  padding: 0 auto;
+  padding: 0 10px;
   height: 20vh;
   margin-bottom: 40px;
 }
