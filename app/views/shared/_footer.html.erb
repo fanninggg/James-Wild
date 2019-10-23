@@ -1,7 +1,12 @@
 <div class="footer">
-  <div class="footer-left">
-    <p style="margin-bottom: 0px;">jamie1wild@gmail.com - +44 7921812332</p>
-  </div>
+  <% if user_signed_in? %>
+    <%= link_to "NEW PROJECT", new_project_path %>
+    <%= link_to "NEW BLOG", new_update_path %>
+  <% else %>
+    <div class="footer-left">
+      <p style="margin-bottom: 0px;">jamie1wild@gmail.com - +44 7921812332</p>
+    </div>
+  <% end %>
   <div class="footer-center">
     <%= link_to "https://www.instagram.com/james_wild_sculptures/", class: "insta-link", target: "_blank" do %>
       <i class="fab fa-instagram footer-insta"></i>
