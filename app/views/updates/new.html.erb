@@ -9,6 +9,7 @@
         <%= f.input :url, label: 'Project link url', class: 'form-control' %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
+        <%= f.rich_text_area :content %>
         <%= f.submit class: "btn btn-primary btn-lg" %>
       <% end %>
     </div>

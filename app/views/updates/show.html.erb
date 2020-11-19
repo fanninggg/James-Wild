@@ -15,6 +15,7 @@
         <a href="<%= @update.url %>"><%= @update.link %></a>
       </div>
     <% end %>
+    <%= @update.content %>
     <% if current_user %>
       <%= link_to "EDIT", edit_update_path(@update) %>
       <%= link_to "DELETE", update_path(@update), method: :delete %>

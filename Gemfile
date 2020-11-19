@@ -1,12 +1,14 @@
 source 'https://rubygems.org'
-ruby '2.4.5'
+ruby '2.6.6'
 
 gem 'bootsnap', require: false
+gem 'activesupport'
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
-gem 'rails', '5.2.1'
+gem 'rails', '6.0'
+gem 'sass'
 gem 'redis'
 gem 'cloudinary', '~> 1.9.1'
 gem 'dotenv-rails', groups: [:development, :test]
@@ -19,6 +21,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'trix'
+gem 'actiontext', '6.0'
+gem 'image_processing'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

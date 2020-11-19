@@ -62,7 +62,7 @@ class UpdatesController < ApplicationController
   end
 
   def update_params
-    params.require(:update).permit(:title, :url, :link, :description, :photo)
+    params.require(:update).permit(:title, :url, :link, :description, :photo, :content)
   end
 
 end
