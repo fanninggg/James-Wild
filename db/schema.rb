@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_19_182509) do
+ActiveRecord::Schema.define(version: 2021_01_29_164251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,22 @@ ActiveRecord::Schema.define(version: 2020_11_19_182509) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "sent"
+  end
+
+  create_table "homepages", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "project_one_id"
+    t.bigint "project_two_id"
+    t.bigint "project_three_id"
+    t.bigint "project_four_id"
+    t.string "bronze_title"
+    t.string "scrap_title"
+    t.string "work_title"
+    t.index ["project_four_id"], name: "index_homepages_on_project_four_id"
+    t.index ["project_one_id"], name: "index_homepages_on_project_one_id"
+    t.index ["project_three_id"], name: "index_homepages_on_project_three_id"
+    t.index ["project_two_id"], name: "index_homepages_on_project_two_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -102,6 +118,10 @@ ActiveRecord::Schema.define(version: 2020_11_19_182509) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "homepages", "projects", column: "project_four_id"
+  add_foreign_key "homepages", "projects", column: "project_one_id"
+  add_foreign_key "homepages", "projects", column: "project_three_id"
+  add_foreign_key "homepages", "projects", column: "project_two_id"
   add_foreign_key "photos", "projects"
   add_foreign_key "projects", "users"
 end

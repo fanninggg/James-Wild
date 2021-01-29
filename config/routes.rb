@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get 'sent'
     end
   end
+  resources :homepages, only: [:edit, :update]
   resources :photos, only: [:destroy]
   resources :updates
   root to: 'pages#home'

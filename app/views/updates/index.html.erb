@@ -5,13 +5,13 @@
     </div>
     <div class="row">
       <% @updates.each do |update| %>
-        <%= link_to update_path(update) do %>
-          <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <%= link_to update_path(update) do %>
             <div class="latest-work-card update" style="background-image: url(<%= update.photo? ? cl_image_path(update.photo, :format => :webp, :quality => 10) : image_path("Logo.jpg") %>);">
               <div class="latest-work-title small"><%= update.title.truncate(60) %></div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>

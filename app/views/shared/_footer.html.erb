@@ -2,6 +2,7 @@
   <% if user_signed_in? %>
     <%= link_to "NEW PROJECT", new_project_path %>
     <%= link_to "NEW BLOG", new_update_path %>
+    <%= link_to "Homepage", edit_homepage_path(Homepage.first) %>
   <% else %>
     <div class="footer-left">
       <p style="margin-bottom: 0px;">jamie1wild@gmail.com - +44 7921812332</p>

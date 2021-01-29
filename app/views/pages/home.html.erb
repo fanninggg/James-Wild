@@ -1,4 +1,80 @@
 <div class="home-container">
+  <div id="carouselExampleIndicators" class="carousel rel slide carousel-fade" data-ride="carousel" data-pause="false">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <!-- Slide One - Set the background image for this slide in the line below -->
+      <div class="carousel-item active" style="background-image: url('<%= cl_image_path(@homepage.project_one.photo) %>')">
+        <div class="carousel-caption d-md-block">
+          <%= link_to project_path(@homepage.project_one), class: "no-hover" do  %>
+            <h2 class="display-4">
+              <%= @homepage.project_one.name %>
+            </h2>
+          </div>
+          <% end %>
+      </div>
+      <!-- project Two - Set the background image for this project in the line below -->
+      <div class="carousel-item" style="background-image: url('<%= cl_image_path(@homepage.project_two.photo) %>')">
+        <div class="carousel-caption d-md-block">
+          <%= link_to project_path(@homepage.project_two), class: "no-hover" do %>
+            <h2 class="display-4">
+              <%= @homepage.project_two.name %>
+            </h2>
+          <% end %>
+        </div>
+      </div>
+      <!-- project Three - Set the background image for this project in the line below -->
+      <div class="carousel-item" style="background-image: url('<%= cl_image_path(@homepage.project_three.photo) %>')">
+        <div class="carousel-caption d-md-block">
+          <%= link_to project_path(@homepage.project_three), class: "no-hover" do %>
+            <h2 class="display-4">
+              <%= @homepage.project_three.name %>
+            </h2>
+          <% end %>
+        </div>
+      </div>
+      <div class="carousel-item" style="background-image: url('<%= cl_image_path(@homepage.project_four.photo) %>')">
+        <div class="carousel-caption d-md-block">
+          <%= link_to project_path(@homepage.project_four), class: "no-hover" do %>
+            <h2 class="display-4">
+              <%= @homepage.project_four.name %>
+            </h2>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg" style="background-image: url(<%= asset_path("w.png") %>);">
+    <div class="main-text" style="margin-top: 0px;">
+      <div class="tc">
+        <%= @homepage.homepage_content %>
+      </div>
+    </div>
+    <div class="main-text">
+      <h3 class="index-header"><%= @homepage.work_title %></h3>
+    </div>
+
+    <div class="home-latest-work">
+      <div class="container">
+        <div class="row">
+          <% @projects.each do |project| %>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <%= link_to project_path(project) do %>
+                <div class="latest-work-card" style="background-image: url(<%= project.photos.empty? ? image_path("James-wolf.png") : cl_image_path(project.photos.order(created_at: :desc).first.url, :format => :jpeg, :quality => 40, :width => 300)%>);">
+                  <div class="latest-work-title"><%= project.sub.present? ? project.sub&.split&.map(&:capitalize)&.join(" ") : project.name %></div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="home-video">
     <div class="player">
 
@@ -15,39 +91,6 @@
         <% end %>
       </div>
     </div>
-  </div>
-  <div class="mobile-header">
-    <div class="mobile-tag">
-      <p>Young Wolf</p>
-      <p>Scottish Highlands</p>
-    </div>
-  </div>
-  <div class="bg" style="background-image: url(<%= asset_path("w.png") %>);">
-    <div class="main-text" style="margin-top: 0px;">
-      <p class="text-center main-content">Inspired by the form and movement of nature, <i>James Wild</i> focuses on capturing the essence of the wild through sculpture. <br><br>His ambition is to build awareness and appreciation for the wild parts of our planet and the life that inhabits them. Conservation and a love for working from life was the catalyst on which James started sculpting in 2009 and since then he has completed both private and public works of art in the UK and Overseas.</p>
-    </div>
-    <div class="main-text">
-      <h3 class="index-header">LATEST WORK</h3>
-    </div>
-
-    <div class="home-latest-work">
-      <div class="container">
-        <div class="row">
-          <% @projects.each do |project| %>
-            <%= link_to project_path(project) do %>
-              <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="latest-work-card" style="background-image: url(<%= project.photos.empty? ? image_path("James-wolf.png") : cl_image_path(project.photos.order(created_at: :desc).first.url, :format => :jpeg, :quality => 40, :width => 300)%>);">
-                  <div class="latest-work-title"><%= project.sub.present? ? project.sub&.split&.map(&:capitalize)&.join(" ") : project.name %></div>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <%= link_to bronze_path, class: "circle-holder" do  %>
-      <%= image_tag "onewild.png", alt: "FFI logo", class: "home-logo" %>
-    <% end %>
   </div>
 </div>
 

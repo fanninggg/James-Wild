@@ -4,10 +4,12 @@ class ProjectsController < ApplicationController
 
   def bronze
     @projects = Project.where(bronze: true).reverse
+    @homepage = Homepage.first
   end
 
   def scrap
     @projects = Project.where(bronze: false).reverse
+    @homepage = Homepage.first
   end
 
   def show
